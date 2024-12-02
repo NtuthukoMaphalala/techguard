@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Guardian IT Services</title>
+    <link rel="icon" href="img/logo2.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -28,7 +29,7 @@
             </a>
             <!-- Navigation Links -->
             <nav>
-                <ul class="flex space-x-6">
+                <ul class="hidden md:flex space-x-6">
                     <li>
                         <a href="index.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">
                             Home
@@ -50,15 +51,30 @@
                         </a>
                     </li>
                 </ul>
+                <!-- Mobile Menu (Hamburger) -->
+                <div class="md:hidden">
+                    <button class="text-white" id="mobile-menu-button">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </nav>
         </div>
     </header>
-    
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-blue-600 text-white md:hidden">
+        <ul class="space-y-4 p-4">
+            <li><a href="index.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Home</a></li>
+            <li><a href="services.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Services</a></li>
+            <li><a href="about.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">About</a></li>
+            <li><a href="contact.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- Page Header -->
     <section class="bg-blue-500 text-white text-center py-12">
         <h2 class="text-4xl font-bold">Contact Us</h2>
-        <p class="mt-2 text-lg">We’d love to hear from you! Get in touch with us today.</p>
+        <p class="mt-2 text-lg">We would love to hear from you! Get in touch with us today.</p>
     </section>
 
     <!-- Contact Form Section -->
@@ -139,10 +155,17 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-blue-600 text-white py-4">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 Tech Guardian IT Services. All Rights Reserved.</p>
-        </div>
+    <footer class="bg-blue-600 text-white text-center py-6">
+        <p>&copy; 2024 Tech Guardian. All rights reserved.</p>
     </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
