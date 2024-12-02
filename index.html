@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Guardian IT Services</title>
+    <link rel="icon" href="img/logo2.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -28,7 +29,7 @@
             </a>
             <!-- Navigation Links -->
             <nav>
-                <ul class="flex space-x-6">
+                <ul class="hidden md:flex space-x-6">
                     <li>
                         <a href="index.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">
                             Home
@@ -50,12 +51,26 @@
                         </a>
                     </li>
                 </ul>
+                <!-- Mobile Menu (Hamburger) -->
+                <div class="md:hidden">
+                    <button class="text-white" id="mobile-menu-button">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </nav>
         </div>
     </header>
-    
-    
 
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-blue-600 text-white md:hidden">
+        <ul class="space-y-4 p-4">
+            <li><a href="index.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Home</a></li>
+            <li><a href="services.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Services</a></li>
+            <li><a href="about.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">About</a></li>
+            <li><a href="contact.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Contact</a></li>
+        </ul>
+    </div>
+    
     <!-- Hero Section -->
     <section class="bg-blue-500 text-white text-center py-20">
         <div class="container mx-auto">
@@ -81,10 +96,6 @@
                     <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-full object-cover">
                     <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-full object-cover">
                     <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-full object-cover">
-                    <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-full object-cover">
-                    <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-full object-cover">
-                    <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-full object-cover">
-                    <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-full object-cover">
                 </div>
                 <!-- Navigation -->
                 <button id="prev" class="absolute top-1/2 left-4 -translate-y-1/2 bg-blue-600 text-white rounded-full p-2 shadow-md">
@@ -100,32 +111,12 @@
     <!-- Companies We Have Worked With Section -->
     <section class="bg-gray-100 py-16">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-8">Companies We Have Worked With</h2>
-            <div class="grid grid-cols-3 gap-8">
-                <!-- Company 1 -->
+            <h2 class="text-3xl font-bold mb-8">Companies We Have Worked With (Coming Soon!)</h2>
+            <div class="grid grid-cols-3 gap-8 md:grid-cols-6 sm:grid-cols-3">
+                <!--
                 <a href="https://company1.com" target="_blank">
                     <img src="img/company1_logo.png" alt="Company 1" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
-                </a>
-                <!-- Company 2 -->
-                <a href="https://company2.com" target="_blank">
-                    <img src="img/company2_logo.png" alt="Company 2" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
-                </a>
-                <!-- Company 3 -->
-                <a href="https://company3.com" target="_blank">
-                    <img src="img/company3_logo.png" alt="Company 3" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
-                </a>
-                <!-- Company 4 -->
-                <a href="https://company4.com" target="_blank">
-                    <img src="img/company4_logo.png" alt="Company 4" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
-                </a>
-                <!-- Company 5 -->
-                <a href="https://company5.com" target="_blank">
-                    <img src="img/company5_logo.png" alt="Company 5" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
-                </a>
-                <!-- Company 6 -->
-                <a href="https://company6.com" target="_blank">
-                    <img src="img/company6_logo.png" alt="Company 6" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
-                </a>
+                </a-->
             </div>
         </div>
     </section>
@@ -146,56 +137,14 @@
         </div>
     </footer>
 
-<script>
-    const carousel = document.getElementById('carousel');
-    const slides = carousel.children;
-    const totalSlides = slides.length;
-    const slideWidth = slides[0].offsetWidth;
-    let offset = 0;
-
-    const slideNext = () => {
-        offset = (offset + slideWidth) % (totalSlides * slideWidth);
-        carousel.style.transition = 'transform 0.5s ease';
-        carousel.style.transform = `translateX(-${offset}px)`;
-
-        // After transition completes, reset to first slide
-        if (offset === totalSlides * slideWidth) {
-            setTimeout(() => {
-                carousel.style.transition = 'none';  // Disable transition for resetting
-                carousel.style.transform = `translateX(0)`;
-                offset = 0;
-                setTimeout(() => {
-                    carousel.style.transition = 'transform 0.5s ease'; // Re-enable transition
-                }, 50);
-            }, 500);  // Match transition duration
-        }
-    };
-
-    const slidePrev = () => {
-        offset = (offset - slideWidth + totalSlides * slideWidth) % (totalSlides * slideWidth);
-        carousel.style.transition = 'transform 0.5s ease';
-        carousel.style.transform = `translateX(-${offset}px)`;
-
-        // After transition completes, reset to last slide
-        if (offset < 0) {
-            setTimeout(() => {
-                carousel.style.transition = 'none';  // Disable transition for resetting
-                carousel.style.transform = `translateX(-${(totalSlides - 1) * slideWidth}px)`;
-                offset = (totalSlides - 1) * slideWidth;
-                setTimeout(() => {
-                    carousel.style.transition = 'transform 0.5s ease'; // Re-enable transition
-                }, 50);
-            }, 500);  // Match transition duration
-        }
-    };
-
-    document.getElementById('next').addEventListener('click', slideNext);
-    document.getElementById('prev').addEventListener('click', slidePrev);
-
-    // Auto-slide every 5 seconds
-    setInterval(slideNext, 2000);
-</script>
-
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>
