@@ -23,20 +23,37 @@
         <div class="container mx-auto flex justify-between items-center py-4 px-6">
             <!-- Logo and Company Name -->
             <a href="index.html" class="flex items-center space-x-4">
-                <img src="https://via.placeholder.com/40x40.png?text=Logo" alt="Logo" class="w-10 h-10 rounded-full">
-                <h1 class="text-3xl font-bold">Tech Guardian</h1>
+                <img src="img/logo.png" alt="Logo" class="w-12 h-12 rounded-full border-2 border-white">
+                <h1 class="text-3xl font-bold tracking-wide">Tech Guardian</h1>
             </a>
             <!-- Navigation Links -->
             <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="index.html" class="hover:text-blue-200">Home</a></li>
-                    <li><a href="services.html" class="hover:text-blue-200">Services</a></li>
-                    <li><a href="about.html" class="hover:text-blue-200">About</a></li>
-                    <li><a href="contact.html" class="hover:text-blue-200">Contact</a></li>
+                <ul class="flex space-x-6">
+                    <li>
+                        <a href="index.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">
+                            Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">
+                            Contact
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
+    
     
 
     <!-- Hero Section -->
@@ -53,15 +70,21 @@
     <!-- Sliding Pictures Section -->
     <section class="relative mt-8">
         <div class="container mx-auto overflow-hidden">
-            <div class="relative w-full h-64">
+            <div class="relative w-full h-96">
                 <!-- Images -->
-                <div id="carousel" class="absolute flex w-[calc(100%*6)] h-full transition-transform">
-                    <img src="https://via.placeholder.com/1200x400/1E40AF/FFFFFF?text=Slide+1" alt="Slide 1" class="w-1/6 h-full object-cover">
-                    <img src="https://via.placeholder.com/1200x400/0369A1/FFFFFF?text=Slide+2" alt="Slide 2" class="w-1/6 h-full object-cover">
-                    <img src="https://via.placeholder.com/1200x400/0284C7/FFFFFF?text=Slide+3" alt="Slide 3" class="w-1/6 h-full object-cover">
-                    <img src="https://via.placeholder.com/1200x400/1E40AF/FFFFFF?text=Slide+1" alt="Slide 1" class="w-1/6 h-full object-cover">
-                    <img src="https://via.placeholder.com/1200x400/0369A1/FFFFFF?text=Slide+2" alt="Slide 2" class="w-1/6 h-full object-cover">
-                    <img src="https://via.placeholder.com/1200x400/0284C7/FFFFFF?text=Slide+3" alt="Slide 3" class="w-1/6 h-full object-cover">
+                <div id="carousel" class="absolute flex w-full h-full transition-transform space-x-4">
+                    <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-full object-cover">
+                    <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-full object-cover">
+                    <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-full object-cover">
+                    <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-full object-cover">
+                    <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-full object-cover">
+                    <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-full object-cover">
+                    <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-full object-cover">
+                    <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-full object-cover">
+                    <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-full object-cover">
+                    <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-full object-cover">
+                    <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-full object-cover">
+                    <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-full object-cover">
                 </div>
                 <!-- Navigation -->
                 <button id="prev" class="absolute top-1/2 left-4 -translate-y-1/2 bg-blue-600 text-white rounded-full p-2 shadow-md">
@@ -74,33 +97,105 @@
         </div>
     </section>
 
+    <!-- Companies We Have Worked With Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Companies We Have Worked With</h2>
+            <div class="grid grid-cols-3 gap-8">
+                <!-- Company 1 -->
+                <a href="https://company1.com" target="_blank">
+                    <img src="img/company1_logo.png" alt="Company 1" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
+                </a>
+                <!-- Company 2 -->
+                <a href="https://company2.com" target="_blank">
+                    <img src="img/company2_logo.png" alt="Company 2" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
+                </a>
+                <!-- Company 3 -->
+                <a href="https://company3.com" target="_blank">
+                    <img src="img/company3_logo.png" alt="Company 3" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
+                </a>
+                <!-- Company 4 -->
+                <a href="https://company4.com" target="_blank">
+                    <img src="img/company4_logo.png" alt="Company 4" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
+                </a>
+                <!-- Company 5 -->
+                <a href="https://company5.com" target="_blank">
+                    <img src="img/company5_logo.png" alt="Company 5" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
+                </a>
+                <!-- Company 6 -->
+                <a href="https://company6.com" target="_blank">
+                    <img src="img/company6_logo.png" alt="Company 6" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-blue-600 text-white text-center py-12">
+        <h3 class="text-3xl font-bold">Transform Your Home with Smart Automation</h3>
+        <p class="mt-4">Get started with Home Assistant today and make your home smarter, more efficient, and more connected.</p>
+        <a href="contact.html" class="mt-6 inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-bold hover:bg-blue-100 transition">
+            Get Started Now
+        </a>
+    </section>
+
     <!-- Footer -->
-    <footer class="bg-blue-600 text-white py-4 mt-8">
+    <footer class="bg-blue-600 text-white py-4">
         <div class="container mx-auto text-center">
             <p>&copy; 2024 Tech Guardian IT Services. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script>
-        const carousel = document.getElementById('carousel');
-        const slideWidth = carousel.children[0].offsetWidth;
-        let offset = 0;
+<script>
+    const carousel = document.getElementById('carousel');
+    const slides = carousel.children;
+    const totalSlides = slides.length;
+    const slideWidth = slides[0].offsetWidth;
+    let offset = 0;
 
-        const slideNext = () => {
-            offset = (offset + slideWidth) % (carousel.scrollWidth / 2);
-            carousel.style.transform = `translateX(-${offset}px)`;
-        };
+    const slideNext = () => {
+        offset = (offset + slideWidth) % (totalSlides * slideWidth);
+        carousel.style.transition = 'transform 0.5s ease';
+        carousel.style.transform = `translateX(-${offset}px)`;
 
-        const slidePrev = () => {
-            offset = (offset - slideWidth + carousel.scrollWidth / 2) % (carousel.scrollWidth / 2);
-            carousel.style.transform = `translateX(-${offset}px)`;
-        };
+        // After transition completes, reset to first slide
+        if (offset === totalSlides * slideWidth) {
+            setTimeout(() => {
+                carousel.style.transition = 'none';  // Disable transition for resetting
+                carousel.style.transform = `translateX(0)`;
+                offset = 0;
+                setTimeout(() => {
+                    carousel.style.transition = 'transform 0.5s ease'; // Re-enable transition
+                }, 50);
+            }, 500);  // Match transition duration
+        }
+    };
 
-        document.getElementById('next').addEventListener('click', slideNext);
-        document.getElementById('prev').addEventListener('click', slidePrev);
+    const slidePrev = () => {
+        offset = (offset - slideWidth + totalSlides * slideWidth) % (totalSlides * slideWidth);
+        carousel.style.transition = 'transform 0.5s ease';
+        carousel.style.transform = `translateX(-${offset}px)`;
 
-        // Auto-slide every 5 seconds
-        setInterval(slideNext, 5000);
-    </script>
+        // After transition completes, reset to last slide
+        if (offset < 0) {
+            setTimeout(() => {
+                carousel.style.transition = 'none';  // Disable transition for resetting
+                carousel.style.transform = `translateX(-${(totalSlides - 1) * slideWidth}px)`;
+                offset = (totalSlides - 1) * slideWidth;
+                setTimeout(() => {
+                    carousel.style.transition = 'transform 0.5s ease'; // Re-enable transition
+                }, 50);
+            }, 500);  // Match transition duration
+        }
+    };
+
+    document.getElementById('next').addEventListener('click', slideNext);
+    document.getElementById('prev').addEventListener('click', slidePrev);
+
+    // Auto-slide every 5 seconds
+    setInterval(slideNext, 2000);
+</script>
+
+
 </body>
 </html>
