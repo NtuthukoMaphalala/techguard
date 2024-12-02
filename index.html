@@ -83,30 +83,74 @@
     </section>
 
     <!-- Sliding Pictures Section -->
-    <section class="relative mt-8">
-        <div class="container mx-auto overflow-hidden">
-            <div class="relative w-full h-96">
-                <!-- Images -->
-                <div id="carousel" class="absolute flex w-full h-full transition-transform space-x-4">
-                    <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-full object-cover">
-                    <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-full object-cover">
-                    <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-full object-cover">
-                    <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-full object-cover">
-                    <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-full object-cover">
-                    <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-full object-cover">
-                    <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-full object-cover">
-                    <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-full object-cover">
-                </div>
-                <!-- Navigation -->
-                <button id="prev" class="absolute top-1/2 left-4 -translate-y-1/2 bg-blue-600 text-white rounded-full p-2 shadow-md">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button id="next" class="absolute top-1/2 right-4 -translate-y-1/2 bg-blue-600 text-white rounded-full p-2 shadow-md">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+<section class="relative mt-8">
+    <div class="container mx-auto overflow-hidden">
+        <div class="relative w-full h-96">
+            <!-- Images -->
+            <div id="carousel" class="absolute flex w-full h-full transition-transform space-x-4">
+                <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-full object-cover">
+                <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-full object-cover">
+                <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-full object-cover">
+                <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-full object-cover">
+                <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-full object-cover">
+                <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-full object-cover">
+                <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-full object-cover">
+                <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-full object-cover">
             </div>
+            <!-- Navigation -->
+            <button id="prev" class="absolute top-1/2 left-4 -translate-y-1/2 bg-blue-600 text-white rounded-full p-2 shadow-md">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="next" class="absolute top-1/2 right-4 -translate-y-1/2 bg-blue-600 text-white rounded-full p-2 shadow-md">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+    // Select the carousel container
+    const carousel = document.getElementById('carousel');
+    let index = 0;
+    
+    // Define the custom sequence: 1 -> 2 -> 3 -> 5 -> 5 -> 3 -> 2 -> 1 (repeated)
+    const sequence = [0, 1, 2, 3]; // These correspond to img1, img2, img3, img5 (0-based index)
+    
+    // Total number of images in the carousel
+    const totalImages = sequence.length;
+
+    // Select the next and previous buttons
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    // Function to update the carousel position
+    function updateCarousel() {
+        const currentIndex = sequence[index];
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Event listener for the next button
+    nextButton.addEventListener('click', () => {
+        // Move forward in the sequence
+        index = (index + 1) % totalImages;
+        updateCarousel();
+    });
+
+    // Event listener for the previous button
+    prevButton.addEventListener('click', () => {
+        // Move backward in the sequence
+        index = (index - 1 + totalImages) % totalImages;
+        updateCarousel();
+    });
+
+    // Automatic sliding functionality
+    setInterval(() => {
+        // Move forward in the sequence automatically
+        index = (index + 1) % totalImages;
+        updateCarousel();
+    }, 3000); // Slide every 3 seconds (3000 ms)
+</script>
+
 
     <!-- Companies We Have Worked With Section -->
     <section class="bg-gray-100 py-16">
