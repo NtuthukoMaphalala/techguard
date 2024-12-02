@@ -54,74 +54,89 @@
         </div>
     </header>
     
+    
 
-    <!-- Page Header -->
-    <section class="bg-blue-500 text-white text-center py-12">
-        <h2 class="text-4xl font-bold">About Us</h2>
-        <p class="mt-2 text-lg">Learn more about our mission, vision, and the team behind Tech Guardian IT Services.</p>
-    </section>
-
-    <!-- About Section -->
-    <section class="py-16 bg-white">
+    <!-- Hero Section -->
+    <section class="bg-blue-500 text-white text-center py-20">
         <div class="container mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <!-- Image -->
-                <img src="https://via.placeholder.com/600x400" alt="About Us" class="rounded-lg shadow-md">
-                
-                <!-- Content -->
-                <div>
-                    <h3 class="text-3xl font-bold mb-4">Who We Are</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        At Tech Guardian IT Services, we are committed to providing reliable and cutting-edge IT solutions 
-                        tailored to meet the unique needs of our clients. Our mission is to empower businesses and individuals 
-                        with technology that works seamlessly and efficiently.
-                    </p>
-                    <p class="text-gray-700 leading-relaxed">
-                        Established with a passion for technology and a dedication to excellence, we have helped numerous 
-                        clients streamline their IT infrastructure, enhance security, and achieve their digital goals.
-                    </p>
+            <h2 class="text-4xl font-bold mb-4 fade-in">Your Trusted IT Partner</h2>
+            <p class="text-lg mb-8 fade-in">Expert Solutions for All Your Tech Needs</p>
+            <a href="contact.html" class="bg-white text-blue-600 px-6 py-3 rounded-full font-bold hover:bg-blue-100 transition fade-in">
+                Get Support Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Sliding Pictures Section -->
+    <section class="relative mt-8">
+        <div class="container mx-auto overflow-hidden">
+            <div class="relative w-full h-96">
+                <!-- Images -->
+                <div id="carousel" class="absolute flex w-full h-full transition-transform space-x-4">
+                    <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-full object-cover">
+                    <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-full object-cover">
+                    <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-full object-cover">
+                    <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-full object-cover">
+                    <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-full object-cover">
+                    <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-full object-cover">
+                    <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-full object-cover">
+                    <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-full object-cover">
+                    <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-full object-cover">
+                    <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-full object-cover">
+                    <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-full object-cover">
+                    <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-full object-cover">
                 </div>
+                <!-- Navigation -->
+                <button id="prev" class="absolute top-1/2 left-4 -translate-y-1/2 bg-blue-600 text-white rounded-full p-2 shadow-md">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="next" class="absolute top-1/2 right-4 -translate-y-1/2 bg-blue-600 text-white rounded-full p-2 shadow-md">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Vision & Mission Section -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto grid md:grid-cols-2 gap-8">
-            <!-- Vision -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h4 class="text-2xl font-bold mb-2 text-blue-600">Our Vision</h4>
-                <p class="text-gray-700 leading-relaxed">
-                    To be the most trusted IT service provider, empowering businesses and individuals with innovative and 
-                    reliable technology solutions.
-                </p>
-            </div>
-
-            <!-- Mission -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h4 class="text-2xl font-bold mb-2 text-blue-600">Our Mission</h4>
-                <p class="text-gray-700 leading-relaxed">
-                    To deliver exceptional IT services and solutions that exceed our clients' expectations, while fostering 
-                    a culture of innovation, collaboration, and integrity.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="py-16 bg-white">
+    <!-- Companies We Have Worked With Section -->
+    <section class="bg-gray-100 py-16">
         <div class="container mx-auto text-center">
-            <h3 class="text-3xl font-bold mb-8">Meet Our Team</h3>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Team Member -->
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <img src="img/img11.png" alt="Team Member" class="w-24 h-24 rounded-full mx-auto mb-4">
-                    
-                    <h4 class="text-xl font-bold">Ntuthuko Maphalala</h4>
-                    <p class="text-gray-600">Founder & CEO</p>
-                </div>
+            <h2 class="text-3xl font-bold mb-8">Companies We Have Worked With</h2>
+            <div class="grid grid-cols-3 gap-8">
+                <!-- Company 1 -->
+                <a href="https://company1.com" target="_blank">
+                    <img src="img/company1_logo.png" alt="Company 1" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
+                </a>
+                <!-- Company 2 -->
+                <a href="https://company2.com" target="_blank">
+                    <img src="img/company2_logo.png" alt="Company 2" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
+                </a>
+                <!-- Company 3 -->
+                <a href="https://company3.com" target="_blank">
+                    <img src="img/company3_logo.png" alt="Company 3" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
+                </a>
+                <!-- Company 4 -->
+                <a href="https://company4.com" target="_blank">
+                    <img src="img/company4_logo.png" alt="Company 4" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
+                </a>
+                <!-- Company 5 -->
+                <a href="https://company5.com" target="_blank">
+                    <img src="img/company5_logo.png" alt="Company 5" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
+                </a>
+                <!-- Company 6 -->
+                <a href="https://company6.com" target="_blank">
+                    <img src="img/company6_logo.png" alt="Company 6" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
+                </a>
             </div>
         </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-blue-600 text-white text-center py-12">
+        <h3 class="text-3xl font-bold">Transform Your Home with Smart Automation</h3>
+        <p class="mt-4">Get started with Home Assistant today and make your home smarter, more efficient, and more connected.</p>
+        <a href="contact.html" class="mt-6 inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-bold hover:bg-blue-100 transition">
+            Get Started Now
+        </a>
     </section>
 
     <!-- Footer -->
@@ -130,5 +145,57 @@
             <p>&copy; 2024 Tech Guardian IT Services. All Rights Reserved.</p>
         </div>
     </footer>
+
+<script>
+    const carousel = document.getElementById('carousel');
+    const slides = carousel.children;
+    const totalSlides = slides.length;
+    const slideWidth = slides[0].offsetWidth;
+    let offset = 0;
+
+    const slideNext = () => {
+        offset = (offset + slideWidth) % (totalSlides * slideWidth);
+        carousel.style.transition = 'transform 0.5s ease';
+        carousel.style.transform = `translateX(-${offset}px)`;
+
+        // After transition completes, reset to first slide
+        if (offset === totalSlides * slideWidth) {
+            setTimeout(() => {
+                carousel.style.transition = 'none';  // Disable transition for resetting
+                carousel.style.transform = `translateX(0)`;
+                offset = 0;
+                setTimeout(() => {
+                    carousel.style.transition = 'transform 0.5s ease'; // Re-enable transition
+                }, 50);
+            }, 500);  // Match transition duration
+        }
+    };
+
+    const slidePrev = () => {
+        offset = (offset - slideWidth + totalSlides * slideWidth) % (totalSlides * slideWidth);
+        carousel.style.transition = 'transform 0.5s ease';
+        carousel.style.transform = `translateX(-${offset}px)`;
+
+        // After transition completes, reset to last slide
+        if (offset < 0) {
+            setTimeout(() => {
+                carousel.style.transition = 'none';  // Disable transition for resetting
+                carousel.style.transform = `translateX(-${(totalSlides - 1) * slideWidth}px)`;
+                offset = (totalSlides - 1) * slideWidth;
+                setTimeout(() => {
+                    carousel.style.transition = 'transform 0.5s ease'; // Re-enable transition
+                }, 50);
+            }, 500);  // Match transition duration
+        }
+    };
+
+    document.getElementById('next').addEventListener('click', slideNext);
+    document.getElementById('prev').addEventListener('click', slidePrev);
+
+    // Auto-slide every 5 seconds
+    setInterval(slideNext, 2000);
+</script>
+
+
 </body>
 </html>
