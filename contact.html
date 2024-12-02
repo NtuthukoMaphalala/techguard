@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Guardian IT Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation Bar -->
+    <header class="bg-blue-600 text-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <!-- Logo and Company Name -->
+            <a href="index.html" class="flex items-center space-x-4">
+                <img src="https://via.placeholder.com/40x40.png?text=Logo" alt="Logo" class="w-10 h-10 rounded-full">
+                <h1 class="text-3xl font-bold">Tech Guardian</h1>
+            </a>
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:text-blue-200">Home</a></li>
+                    <li><a href="services.html" class="hover:text-blue-200">Services</a></li>
+                    <li><a href="about.html" class="hover:text-blue-200">About</a></li>
+                    <li><a href="contact.html" class="hover:text-blue-200">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-blue-500 text-white text-center py-12">
+        <h2 class="text-4xl font-bold">Contact Us</h2>
+        <p class="mt-2 text-lg">We’d love to hear from you! Get in touch with us today.</p>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto">
+            <div class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md">
+                <h3 class="text-3xl font-bold text-center mb-8">Send Us a Message</h3>
+                <form action="#" method="POST" class="space-y-6">
+                    <!-- Name -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" id="name" name="name" class="w-full mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <input type="email" id="email" name="email" class="w-full mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <!-- Subject -->
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                        <input type="text" id="subject" name="subject" class="w-full mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Enter subject" required>
+                    </div>
+                    
+                    <!-- Message -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your message" required></textarea>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-8">Get in Touch</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Address -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <i class="fas fa-map-marker-alt text-blue-600 text-3xl mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">Our Address</h4>
+                    <p class="text-gray-700">Scottsville, Pietermaritzburg, 3201, South Africa</p>
+                </div>
+                
+                <!-- Phone -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <i class="fas fa-phone-alt text-blue-600 text-3xl mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">Call Us</h4>
+                    <p class="text-gray-700">+27 72 252 7328</p>
+                </div>
+                
+                <!-- Email -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <i class="fas fa-envelope text-blue-600 text-3xl mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">Email Us</h4>
+                    <p class="text-gray-700">ntuthukomaphalala4@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Tech Guardian IT Services. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Guardian IT Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation Bar -->
+    <header class="bg-blue-600 text-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <!-- Logo and Company Name -->
+            <a href="index.html" class="flex items-center space-x-4">
+                <img src="https://via.placeholder.com/40x40.png?text=Logo" alt="Logo" class="w-10 h-10 rounded-full">
+                <h1 class="text-3xl font-bold">Tech Guardian</h1>
+            </a>
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:text-blue-200">Home</a></li>
+                    <li><a href="services.html" class="hover:text-blue-200">Services</a></li>
+                    <li><a href="about.html" class="hover:text-blue-200">About</a></li>
+                    <li><a href="contact.html" class="hover:text-blue-200">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-blue-500 text-white text-center py-12">
+        <h2 class="text-4xl font-bold">Our Services</h2>
+        <p class="mt-2 text-lg">Explore our wide range of IT solutions tailored to your needs.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service Item -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <i class="fas fa-laptop text-5xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Laptop Repair</h3>
+                <p>Comprehensive diagnostics and repairs for all laptop issues, including screen replacements, battery services, and more.</p>
+            </div>
+
+            <!-- Service Item -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <i class="fas fa-chart-line text-5xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Data Analysis</h3>
+                <p>Leveraging data-driven insights to help businesses make informed decisions. Our services include data cleaning, statistical analysis, and visualizations using advanced tools like Excel, R, and SQL.</p>
+            </div>
+
+            <!-- Service Item -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <i class="fas fa-database text-5xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Data Capture</h3>
+                <p>Efficient and accurate data collection solutions for businesses, including data entry, scanning, and system integration.</p>
+            </div>
+
+            <!-- Service Item -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <i class="fas fa-desktop text-5xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Desktop Services</h3>
+                <p>From hardware upgrades to software optimization, we ensure your desktop PC performs at its best.</p>
+            </div>
+
+            <!-- Service Item -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <i class="fas fa-code text-5xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Web Development</h3>
+                <p>Professional web design and development services to create responsive, user-friendly, and visually appealing websites tailored to your needs.</p>
+            </div>
+
+            <!-- Service Item -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <i class="fas fa-mobile-alt text-5xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Mobile Device Support</h3>
+                <p>Expert solutions for smartphones and tablets, including repairs, data recovery, and troubleshooting.</p>
+            </div>
+
+            <!-- Service Item -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <i class="fas fa-network-wired text-5xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Networking</h3>
+                <p>Setup, secure, and maintain home and business networks for seamless connectivity.</p>
+            </div>
+
+            <!-- Service Item -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <i class="fas fa-cloud text-5xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Cloud Solutions</h3>
+                <p>Embrace the cloud with tailored solutions for storage, backup, and collaboration.</p>
+            </div>
+
+            <!-- Service Item -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <i class="fas fa-shield-alt text-5xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">IT Security</h3>
+                <p>Protect your systems and data with advanced security solutions, including firewalls and antivirus setup.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-blue-600 text-white text-center py-12">
+        <h3 class="text-3xl font-bold">Need Help With Your IT?</h3>
+        <p class="mt-4">Contact us today to learn more about our services and how we can assist you.</p>
+        <a href="contact.html" class="mt-6 inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-bold hover:bg-blue-100 transition">
+            Get Support Now
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Tech Guardian IT Services. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
