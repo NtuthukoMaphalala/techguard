@@ -4,23 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Guardian IT Services</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img/logo2.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in {
-            animation: fadeIn 1s ease-in-out;
-        }
-    </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-[#B4BFA1] font-sans">
     <!-- Navigation Bar -->
-    <header class="bg-blue-600 text-white shadow-md">
+    <header class="bg-[#4B5320] text-white shadow-md">
         <div class="container mx-auto flex justify-between items-center py-4 px-6">
             <!-- Logo and Company Name -->
             <a href="index.html" class="flex items-center space-x-4">
@@ -62,7 +53,7 @@
     </header>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden bg-blue-600 text-white md:hidden">
+    <div id="mobile-menu" class="hidden bg-[#4B5320] text-white md:hidden">
         <ul class="space-y-4 p-4">
             <li><a href="index.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Home</a></li>
             <li><a href="services.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Services</a></li>
@@ -72,13 +63,13 @@
     </div>
     
     <!-- Page Header -->
-    <section class="bg-blue-500 text-white text-center py-12">
+    <section class="bg-[#556B2F] text-white text-center py-12">
         <h2 class="text-4xl font-bold">About Us</h2>
         <p class="mt-2 text-lg">Learn more about our mission, vision, and the team behind Tech Guardian IT Services.</p>
     </section>
 
     <!-- About Section -->
-    <section class="py-16 bg-white">
+    <section class="bg-[#B4BFA1] py-16">
         <div class="container mx-auto">
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <!-- Image -->
@@ -102,10 +93,10 @@
     </section>
 
     <!-- Vision & Mission Section -->
-    <section class="py-16 bg-gray-100">
+    <section class="py-16 bg-[#B4BFA1]">
         <div class="container mx-auto grid md:grid-cols-2 gap-8">
             <!-- Vision -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-white p-6 rounded-lg shadow-md zoom-on-hover">
                 <h4 class="text-2xl font-bold mb-2 text-blue-600">Our Vision</h4>
                 <p class="text-gray-700 leading-relaxed">
                     To be the most trusted IT service provider, empowering businesses and individuals with innovative and 
@@ -114,7 +105,7 @@
             </div>
 
             <!-- Mission -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-white p-6 rounded-lg shadow-md zoom-on-hover">
                 <h4 class="text-2xl font-bold mb-2 text-blue-600">Our Mission</h4>
                 <p class="text-gray-700 leading-relaxed">
                     To deliver exceptional IT services and solutions that exceed our clients' expectations, while fostering 
@@ -125,28 +116,32 @@
     </section>
 
     <!-- Team Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto text-center">
-            <h3 class="text-3xl font-bold mb-8">Meet Our Team</h3>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Team Member -->
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <img src="img/img11.png" alt="Team Member" class="w-24 h-24 rounded-full mx-auto mb-4">
-                    
-                    <h4 class="text-xl font-bold">Ntuthuko Maphalala</h4>
-                    <p class="text-gray-600">Founder & CEO</p>
-                </div>
+<section class="py-16 bg-[#B4BFA1]">
+    <div class="container mx-auto text-center">
+        <h3 class="text-3xl font-bold mb-8">Meet Our Team</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Team Member -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition zoom-on-hover">
+                <img src="img/img11.png" alt="Team Member" class="w-24 h-24 rounded-full mx-auto mb-4">
+                
+                <h4 class="text-xl font-bold">Ntuthuko Maphalala</h4>
+                <p class="text-gray-600">Founder & CEO</p>
             </div>
         </div>
-    </section>
+        <div class="mt-8 text-gray-600">
+            <p><strong>Website developed by:</strong> Ntuthuko Maphalala, BSc Computer Science and Information Technology Graduate (University of KwaZulu-Natal)</p>
+        </div>
+    </div>
+</section>
+
 
     <!-- Footer -->
-    <footer class="bg-blue-600 text-white py-4">
+    <footer class="bg-[#4B5320] text-white py-4">
         <div class="container mx-auto text-center">
             <p>&copy; 2024 Tech Guardian IT Services. All Rights Reserved.</p>
         </div>
     </footer>
-
+    <script src="scripts.js"></script>
     <script>
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
