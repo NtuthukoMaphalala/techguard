@@ -77,87 +77,54 @@
         <p class="mt-2 text-lg">We would love to hear from you! Get in touch with us today.</p>
     </section>
 
-    <!-- Contact Form Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto">
-            <div class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md">
-                <h3 class="text-3xl font-bold text-center mb-8">Send Us a Message</h3>
-                <form action="https://formspree.io/f/mwpedwpp" method="POST" class="space-y-6">
-                    <!-- Name -->
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                        <input type="text" id="name" name="name" class="w-full mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your name" required>
-                    </div>
-                    
-                    <!-- Email -->
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                        <input type="email" id="email" name="email" class="w-full mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your email" required>
-                    </div>
-                    
-                    <!-- Subject -->
-                    <div>
-                        <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
-                        <input type="text" id="subject" name="subject" class="w-full mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Enter subject" required>
-                    </div>
-                    
-                    <!-- Message -->
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                        <textarea id="message" name="message" rows="4" class="w-full mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your message" required></textarea>
-                    </div>
-                    
-                    <!-- Submit Button -->
-                    <div class="text-center">
-                        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400">Send Message</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Information -->
     <section class="py-16 bg-gray-100">
         <div class="container mx-auto text-center">
             <h3 class="text-3xl font-bold mb-8">Get in Touch</h3>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Address -->
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Contact Form -->
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <i class="fas fa-map-marker-alt text-blue-600 text-3xl mb-4"></i>
-                    <h4 class="text-xl font-bold mb-2">Our Address</h4>
-                    <p class="text-gray-700">Scottsville, Pietermaritzburg, 3201, South Africa</p>
+                    <h4 class="text-xl font-bold mb-4">Send Us a Message</h4>
+                    <form action="https://formspree.io/f/mwpedwpp" method="POST" class="space-y-4">
+                        <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                        <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                        <input type="text" name="subject" placeholder="Subject" class="w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                        <textarea name="message" rows="4" placeholder="Your Message" class="w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required></textarea>
+                        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">Send Message</button>
+                    </form>
                 </div>
-                
-                <!-- Phone -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <i class="fas fa-phone-alt text-blue-600 text-3xl mb-4"></i>
-                    <h4 class="text-xl font-bold mb-2">Call Us</h4>
-                    <p class="text-gray-700">+27 72 252 7328</p>
+                <!-- Contact Info -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Address -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <i class="fas fa-map-marker-alt text-blue-600 text-3xl mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2">Our Address</h4>
+                        <p class="text-gray-700">Scottsville, Pietermaritzburg, 3201, South Africa</p>
+                    </div>
+                    <!-- Phone -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <i class="fas fa-phone-alt text-blue-600 text-3xl mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2">Call Us</h4>
+                        <p class="text-gray-700">+27 72 252 7328</p>
+                    </div>
+                    <!-- Email -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <i class="fas fa-envelope text-blue-600 text-3xl mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2">Email Us</h4>
+                        <p class="text-gray-700">ntuthukomaphalala4@gmail.com</p>
+                    </div>
+                    <!-- LinkedIn -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <i class="fab fa-linkedin text-blue-600 text-3xl mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2">LinkedIn</h4>
+                        <a href="https://www.linkedin.com/in/ntuthukomaphalala" target="_blank" class="text-blue-600 hover:underline">
+                            linkedin.com/in/ntuthukomaphalala
+                        </a>
+                    </div>
                 </div>
-                
-                <!-- Email -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <i class="fas fa-envelope text-blue-600 text-3xl mb-4"></i>
-                    <h4 class="text-xl font-bold mb-2">Email Us</h4>
-                    <p class="text-gray-700">ntuthukomaphalala4@gmail.com</p>
-                </div>
-            </div>
-
-            <!-- LinkedIn Profile -->
-            <div class="mt-8">
-                <h4 class="text-xl font-bold">Connect with Us</h4>
-                <p class="text-gray-700">Feel free to connect with us on LinkedIn:</p>
-                <a href="https://www.linkedin.com/in/ntuthukomaphalala" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400">
-                    Visit LinkedIn Profile
-                </a>
             </div>
         </div>
-    </section>
+    </section>    
 
-    <!-- Footer -->
-    <footer class="bg-blue-600 text-white text-center py-6">
-        <p>&copy; 2024 Tech Guardian. All rights reserved.</p>
-    </footer>
 
     <script>
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -167,5 +134,30 @@
             mobileMenu.classList.toggle('hidden');
         });
     </script>
+    <footer class="bg-blue-600 text-white text-center py-6">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <!-- Footer Text -->
+                <div>
+                    <p>&copy; 2024 Tech Guardian. All rights reserved.</p>
+                </div>
+    
+                <!-- Embedded Google Map -->
+                <div class="rounded-lg overflow-hidden">
+                    <p class="text-lg font-semibold mb-4">Find Us Here:</p>
+                    <p>Scottsville, Pietermaritzburg, 3201, South Africa</p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3483.0497458620936!2d30.402900475902346!3d-29.626435159700996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1efef52f32456789%3A0xabcdef1234567890!2sScottsville%2C%20Pietermaritzburg%2C%203201%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1234567890123"
+                        width="100%"
+                        height="200"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
 </body>
 </html>
