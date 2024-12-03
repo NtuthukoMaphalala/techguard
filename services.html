@@ -63,11 +63,74 @@
         </ul>
     </div>
 
-    <!-- Page Header -->
-    <section class="bg-[#556B2F] text-white text-center py-12">
-        <h2 class="text-4xl font-bold">Our Services</h2>
-        <p class="mt-2 text-lg">Explore our wide range of IT solutions tailored to your needs.</p>
+    <section class="bg-[#556B2F] text-white text-center py-12 relative overflow-hidden">
+        <div class="container mx-auto relative z-10">
+            <h2 class="text-4xl font-bold">Our Services</h2>
+            <p class="mt-2 text-lg">Explore our wide range of IT solutions tailored to your needs.</p>
+        </div>
+        <!-- Canvas for Computer Science-themed animation -->
+        <canvas id="cs-animation" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
     </section>
+    
+    <script>
+        // Computer Science-themed animation
+        const csCanvas = document.getElementById('cs-animation');
+        const csCtx = csCanvas.getContext('2d');
+        let binaryParticles = [];
+        const binaryStrings = ['0', '1'];
+    
+        const csResizeCanvas = () => {
+            csCanvas.width = window.innerWidth;
+            csCanvas.height = window.innerHeight;
+        };
+        window.addEventListener('resize', csResizeCanvas);
+        csResizeCanvas();
+    
+        class BinaryParticle {
+            constructor() {
+                this.x = Math.random() * csCanvas.width;
+                this.y = Math.random() * csCanvas.height;
+                this.speed = Math.random() * 2 + 1;
+                this.text = binaryStrings[Math.floor(Math.random() * binaryStrings.length)];
+                this.fontSize = Math.random() * 15 + 10;
+                this.opacity = Math.random() * 0.5 + 0.5;
+            }
+    
+            update() {
+                this.y += this.speed;
+                if (this.y > csCanvas.height) {
+                    this.y = 0;
+                    this.x = Math.random() * csCanvas.width;
+                }
+            }
+    
+            draw() {
+                csCtx.font = `${this.fontSize}px Arial`;
+                csCtx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                csCtx.fillText(this.text, this.x, this.y);
+            }
+        }
+    
+        const initBinaryParticles = () => {
+            binaryParticles = [];
+            for (let i = 0; i < 100; i++) {
+                binaryParticles.push(new BinaryParticle());
+            }
+        };
+        initBinaryParticles();
+    
+        const animateBinaryParticles = () => {
+            csCtx.clearRect(0, 0, csCanvas.width, csCanvas.height);
+            binaryParticles.forEach((particle) => {
+                particle.update();
+                particle.draw();
+            });
+            requestAnimationFrame(animateBinaryParticles);
+        };
+    
+        animateBinaryParticles();
+    </script>
+    
 
     <!-- Services Section -->
     <section class="">
