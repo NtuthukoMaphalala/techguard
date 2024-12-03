@@ -4,23 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Guardian IT Services</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img/logo2.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in {
-            animation: fadeIn 1s ease-in-out;
-        }
-    </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-[#B4BFA1] font-sans">
     <!-- Navigation Bar -->
-    <header class="bg-blue-600 text-white shadow-md">
+    <header class="bg-[#4B5320] text-white shadow-md">
         <div class="container mx-auto flex justify-between items-center py-4 px-6">
             <!-- Logo and Company Name -->
             <a href="index.html" class="flex items-center space-x-4">
@@ -62,7 +53,7 @@
     </header>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden bg-blue-600 text-white md:hidden">
+    <div id="mobile-menu" class="hidden bg-[#4B5320] text-white md:hidden">
         <ul class="space-y-4 p-4">
             <li><a href="index.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Home</a></li>
             <li><a href="services.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Services</a></li>
@@ -72,17 +63,17 @@
     </div>
 
     <!-- Page Header -->
-    <section class="bg-blue-500 text-white text-center py-12">
+    <section class="bg-[#556B2F] text-white text-center py-12">
         <h2 class="text-4xl font-bold">Contact Us</h2>
         <p class="mt-2 text-lg">We would love to hear from you! Get in touch with us today.</p>
     </section>
 
-    <section class="py-16 bg-gray-100">
+    <section class="py-16 bg-[#B4BFA1]">
         <div class="container mx-auto text-center">
             <h3 class="text-3xl font-bold mb-8">Get in Touch</h3>
             <div class="grid lg:grid-cols-2 gap-8">
                 <!-- Contact Form -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="bg-white p-6 rounded-lg shadow-md zoom-on-hover">
                     <h4 class="text-xl font-bold mb-4">Send Us a Message</h4>
                     <form action="https://formspree.io/f/mwpedwpp" method="POST" class="space-y-4">
                         <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
@@ -95,25 +86,33 @@
                 <!-- Contact Info -->
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- Address -->
-                    <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="bg-white p-6 rounded-lg shadow-md zoom-on-hover">
                         <i class="fas fa-map-marker-alt text-blue-600 text-3xl mb-4"></i>
                         <h4 class="text-xl font-bold mb-2">Our Address</h4>
                         <p class="text-gray-700">Scottsville, Pietermaritzburg, 3201, South Africa</p>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3483.0497458620936!2d30.402900475902346!3d-29.626435159700996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1efef52f32456789%3A0xabcdef1234567890!2sScottsville%2C%20Pietermaritzburg%2C%203201%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1234567890123"
+                            width="100%"
+                            height="200"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy">
+                        </iframe>
                     </div>
                     <!-- Phone -->
-                    <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="bg-white p-6 rounded-lg shadow-md zoom-on-hover">
                         <i class="fas fa-phone-alt text-blue-600 text-3xl mb-4"></i>
                         <h4 class="text-xl font-bold mb-2">Call Us</h4>
                         <p class="text-gray-700">+27 72 252 7328</p>
                     </div>
                     <!-- Email -->
-                    <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="bg-white p-6 rounded-lg shadow-md zoom-on-hover">
                         <i class="fas fa-envelope text-blue-600 text-3xl mb-4"></i>
                         <h4 class="text-xl font-bold mb-2">Email Us</h4>
                         <p class="text-gray-700">ntuthukomaphalala4@gmail.com</p>
                     </div>
                     <!-- LinkedIn -->
-                    <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="bg-white p-6 rounded-lg shadow-md zoom-on-hover">
                         <i class="fab fa-linkedin text-blue-600 text-3xl mb-4"></i>
                         <h4 class="text-xl font-bold mb-2">LinkedIn</h4>
                         <a href="https://www.linkedin.com/in/ntuthukomaphalala" target="_blank" class="text-blue-600 hover:underline">
@@ -125,7 +124,17 @@
         </div>
     </section>    
 
-
+    <footer class="bg-[#4B5320] text-white text-center py-6">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <!-- Footer Text -->
+                <div>
+                    <p>&copy; 2024 Tech Guardian. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
     <script>
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -134,30 +143,5 @@
             mobileMenu.classList.toggle('hidden');
         });
     </script>
-    <footer class="bg-blue-600 text-white text-center py-6">
-        <div class="container mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <!-- Footer Text -->
-                <div>
-                    <p>&copy; 2024 Tech Guardian. All rights reserved.</p>
-                </div>
-    
-                <!-- Embedded Google Map -->
-                <div class="rounded-lg overflow-hidden">
-                    <p class="text-lg font-semibold mb-4">Find Us Here:</p>
-                    <p>Scottsville, Pietermaritzburg, 3201, South Africa</p>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3483.0497458620936!2d30.402900475902346!3d-29.626435159700996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1efef52f32456789%3A0xabcdef1234567890!2sScottsville%2C%20Pietermaritzburg%2C%203201%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1234567890123"
-                        width="100%"
-                        height="200"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
 </body>
 </html>
