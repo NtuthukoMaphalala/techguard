@@ -1,0 +1,69 @@
+    /* Keyframe animation for zoom effect */
+    @keyframes zoom {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.1); }
+    }
+
+    /* Apply zoom animation on hover */
+    .zoom-on-hover:hover {
+        animation: zoom 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+       body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+section {
+    margin: 2rem;
+    padding: 1rem;
+    background: #556B2F;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+.reasons, .faq-item {
+    margin-bottom: 1rem;
+}
+
+.reason, .faq-item {
+    background: #f9f9f9;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.faq-answer {
+    display: none;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+.faq-question {
+    cursor: pointer;
+    color: #0066cc;
+}
