@@ -147,19 +147,40 @@
     </div>
 </section>
 
-    <!-- Companies We Have Worked With Section -->
-    <section class="bg-[#B4BFA1] py-16">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-8">Companies We Have Worked With (Coming Soon!)</h2>
-            <div class="grid grid-cols-3 gap-8 md:grid-cols-6 sm:grid-cols-3">
-                <!--
-                <a href="https://company1.com" target="_blank">
-                    <img src="img/company1_logo.png" alt="Company 1" class="w-32 h-32 object-contain mx-auto hover:opacity-80 transition-opacity">
-                </a-->
+    <section id="why-choose-us">
+        <h2 class="text-3xl font-bold mb-8">Why Choose Us?</h2>
+        <div class="reasons">
+            <div class="reason">
+                <h3>Expertise</h3>
+                <p>We have a team of experienced professionals ready to tackle your challenges.</p>
+            </div>
+            <div class="reason">
+                <h3>Customer Support</h3>
+                <p>Our customer service is available 24/7 to assist you with your needs.</p>
+            </div>
+            <div class="reason">
+                <h3>Affordable Prices</h3>
+                <p>We provide high-quality services at competitive rates.</p>
             </div>
         </div>
     </section>
 
+    <section id="faq">
+        <h2 class="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3 class="faq-question">What services do you offer?</h3>
+            <p class="faq-answer">We offer a wide range of services, including web development, IT solutions, and more.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">How can I contact you?</h3>
+            <p class="faq-answer">You can contact us through our contact form, email, or phone number listed on the website.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Do you provide support after the project is completed?</h3>
+            <p class="faq-answer">Yes, we offer ongoing support to ensure your satisfaction with our services.</p>
+        </div>
+    </section>
+    
     <!-- Call to Action -->
     <section class="bg-[#4B5320] text-white text-center py-12">
         <h3 class="text-3xl font-bold">Transform Your Home with Smart Automation</h3>
@@ -176,13 +197,20 @@
         </div>
     </footer>
     <script src="scripts.js"></script>
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
+        <script>
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+            });
+            });
+        </script>
+    
 </body>
 </html>
