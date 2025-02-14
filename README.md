@@ -24,6 +24,8 @@ You can visit TechGuard by clicking or pasting the following link into your brow
 
 ## Connect With Me
 
-If you have any suggestions or feedback, feel free to connect with me.
+If you have any suggestions or feedback, feel free to connect with me through my portfolio **Contact Form Page**.
+
+🔗 [Portfolio](https://ntuthukomaphalala.github.io/portfolio/)
 
 🚀 **Ntuthuko Maphalala**
