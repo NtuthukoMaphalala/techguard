@@ -6,7 +6,7 @@ Welcome to **TechGuard**, a website I developed from scratch to provide IT solut
 
 You can visit TechGuard by clicking or pasting the following link into your browser:
 
-🔗 [TechGuard IT](https://ntuthukomaphalala.github.io/TechGuard/)
+🔗 [TechGuard IT](https://ntuthukomaphalala.github.io/techguard/)
 
 ## About the Project
 
