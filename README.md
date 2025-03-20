@@ -18,7 +18,7 @@ You can visit TechGuard by clicking or pasting the following link into your brow
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/NtuthukoMaphalala/TechGuard.git
+   git clone https://github.com/NtuthukoMaphalala/techguard.git
    ```
 2. Open the `index.html` file in your browser.
 
