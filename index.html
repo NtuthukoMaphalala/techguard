@@ -65,10 +65,10 @@
     
     <!-- Hero Section -->
 <section class="bg-[#556B2F] text-white text-center py-20 relative overflow-hidden">
-    <div class="container mx-auto relative z-10">
+    <div class="container mx-auto relative z-10 flex flex-col items-center lg:items-start">
+        <p id="current-date-time" class="text-2xl font-semibold mb-4 fade-in self-start pl-10"></p>
         <h2 class="text-4xl font-bold mb-4 fade-in">Your Trusted IT Partner</h2>
         <p class="text-lg mb-8 fade-in">Expert Solutions for All Your Tech Needs</p>
-        <p id="current-date-time" class="text-sm mb-4 fade-in"></p>
         <a href="contact.html" class="bg-white text-gray-500 px-6 py-3 rounded-full font-bold hover:bg-blue-100 transition fade-in">
             Get Support Now
         </a>
@@ -81,11 +81,12 @@
     function updateDateTime() {
         const now = new Date();
         const formattedDateTime = now.toLocaleString();
-        document.getElementById("current-date-time").textContent = `Current Date & Time: ${formattedDateTime}`;
+        document.getElementById("current-date-time").textContent = `📅 ${formattedDateTime}`;
     }
     updateDateTime();
     setInterval(updateDateTime, 1000); // Update every second
 </script>
+
 
 
     <!-- Sliding Pictures Section -->
