@@ -63,11 +63,13 @@
         </ul>
     </div>
     
-   <section class="bg-[#556B2F] text-white text-center py-20 relative overflow-hidden">
+    <section class="bg-[#556B2F] text-white text-center py-20 relative overflow-hidden">
     <!-- Date & Time (top-left) -->
     <div id="datetime" class="absolute top-4 left-4 text-base md:text-lg lg:text-xl font-semibold z-20"></div>
+
     <!-- Weather (top-right) -->
     <div id="weather" class="absolute top-4 right-4 text-base md:text-lg lg:text-xl font-semibold flex items-center gap-2 z-20"></div>
+
     <div class="container mx-auto relative z-10">
         <h2 class="text-4xl font-bold mb-4 fade-in">Your Trusted IT Partner</h2>
         <p class="text-lg mb-8 fade-in">Expert Solutions for All Your Tech Needs</p>
@@ -77,62 +79,13 @@
     </div>
     <canvas id="network-waves" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
 </section>
-<script>
-    // Update date and time every second
-    function updateDateTime() {
-        const now = new Date();
-        const dateTimeString = now.toLocaleString();
-        document.getElementById('datetime').textContent = dateTimeString;
-    }
-    setInterval(updateDateTime, 1000);
-    updateDateTime();
 
-    // Weather using user's location
-    const apiKey = '07bf5d50456b5181632845cd6b13ad91'; // Replace with your OpenWeatherMap API key
-    const weatherEl = document.getElementById('weather');
-
-    if ('geolocation' in navigator) {
-        navigator.geolocation.getCurrentPosition(
-            position => {
-                const lat = position.coords.latitude;
-                const lon = position.coords.longitude;
-
-                fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
-                    .then(response => response.json())
-                    .then(data => {
-                        const temp = data.main.temp.toFixed(1);
-                        const desc = data.weather[0].description;
-                        const icon = data.weather[0].icon;
-                        const location = data.name;
-                        const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
-
-                        weatherEl.innerHTML = `
-                            <div class="flex items-center gap-2">
-                                <img src="${iconUrl}" alt="${desc}" class="w-8 h-8">
-                                <span>${location}: ${temp}°C, ${desc}</span>
-                            </div>
-                        `;
-                    })
-                    .catch(error => {
-                        console.error('Weather fetch error:', error);
-                        weatherEl.textContent = 'Weather unavailable';
-                    });
-            },
-            error => {
-                console.error('Geolocation error:', error);
-                weatherEl.textContent = 'Location not allowed';
-            }
-        );
-    } else {
-        weatherEl.textContent = 'Geolocation not supported';
-    }
-</script>
 
     <!-- Sliding Pictures Section -->
 <section class="relative mt-8">
     <div class="container mx-auto">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <!-- Images with captions -->
+            <!-- Images with captions (only showing the first 3 initially) -->
             <div class="text-center">
                 <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Hardware Repair</p>
@@ -145,58 +98,65 @@
                 <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Code Writing</p>
             </div>
-            <div class="text-center">
+
+            <!-- Additional images hidden initially -->
+            <div class="text-center hidden">
                 <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Analyzing Data</p>
             </div>
-            <div class="text-center">
+            <div class="text-center hidden">
                 <img src="img/img6.jpg" alt="Slide 5" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Web Development</p>
             </div>
-            <div class="text-center">
+            <div class="text-center hidden">
                 <img src="img/img16.jpg" alt="Slide 4" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Data Visualization</p>
             </div>
-            <div class="text-center">
+            <div class="text-center hidden">
                 <img src="img/img7.jpg" alt="Slide 6" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Cloud Computing</p>
             </div>
-            <div class="text-center">
+            <div class="text-center hidden">
                 <img src="img/img8.png" alt="Slide 7" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">HomeAssistant Installation and Automation</p>
             </div>
-            <div class="text-center">
+            <div class="text-center hidden">
                 <img src="img/img9.jpeg" alt="Slide 8" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Data Capturing with over 80% accuracy</p>
             </div>
-            <div class="text-center">
+            <div class="text-center hidden">
                 <img src="img/img10.jpg" alt="Slide 10" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Computer Hardware Maintenance</p>
             </div>
-            <div class="text-center">
+            <div class="text-center hidden">
                 <img src="img/img12.jpg" alt="Slide 12" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Cybersecurity</p>
             </div>
-            <div class="text-center">
+            <div class="text-center hidden">
                 <img src="img/img13.jpg" alt="Slide 13" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Global Connectivity</p>
             </div>
-            <div class="text-center">
+            <div class="text-center hidden">
                 <img src="img/img14.jpg" alt="Slide 14" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">PC/Computer Repair</p>
             </div>
-            <div class="text-center">
+            <div class="text-center hidden">
                 <img src="img/img15.jpg" alt="Slide 15" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Mobile Repair</p>
             </div>
-            <div class="text-center">
+            <div class="text-center hidden">
                 <img src="img/img17.png" alt="Slide 15" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Operating System Installation (MacOS, Windows OS, Ubuntu OS)</p> 
             </div>
-            <div class="text-center">
+            <div class="text-center hidden">
                 <img src="img/img18.png" alt="Slide 4" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">...And Many More!</p>
             </div>
+        </div>
+
+        <!-- See more/less button -->
+        <div class="text-center mt-4">
+            <button id="see-more" class="text-white bg-blue-500 px-4 py-2 rounded">See More</button>
         </div>
     </div>
 </section>
@@ -251,20 +211,13 @@
         </div>
     </footer>
     <script src="scripts.js"></script>
-        <script>
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-            });
-            });
-        </script>
-    
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
