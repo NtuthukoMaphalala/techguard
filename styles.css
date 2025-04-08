@@ -67,3 +67,12 @@ h2 {
     cursor: pointer;
     color: #0066cc;
 }
+
+    @media (max-width: 768px) {
+        #datetime,
+        #weather {
+        position: static;
+        text-align: center;
+        margin: 10px 0;
+        }
+    }
