@@ -95,29 +95,53 @@
     // Update date and time every second
     function updateDateTime() {
         const now = new Date();
-        const dateTimeString = now.toLocaleString(); // Adjust locale if needed
+        const dateTimeString = now.toLocaleString();
         document.getElementById('datetime').textContent = dateTimeString;
     }
     setInterval(updateDateTime, 1000);
-    updateDateTime(); // Initial call
+    updateDateTime();
 
-    // Get current weather using OpenWeatherMap API (replace with your API key)
-    const apiKey = '07bf5d50456b5181632845cd6b13ad91';
-    const city = 'Pietermaritzburg'; // Change to your city
-    const units = 'metric'; // or 'imperial'
+    // Weather using user's location
+    const apiKey = '07bf5d50456b5181632845cd6b13ad91'; // Replace with your OpenWeatherMap API key
+    const weatherEl = document.getElementById('weather');
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`)
-        .then(response => response.json())
-        .then(data => {
-            const temp = data.main.temp.toFixed(1);
-            const desc = data.weather[0].description;
-            document.getElementById('weather').textContent = `${city}: ${temp}°C, ${desc}`;
-        })
-        .catch(error => {
-            document.getElementById('weather').textContent = 'Weather unavailable';
-            console.error('Weather fetch error:', error);
-        });
+    if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition(
+            position => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+
+                fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const temp = data.main.temp.toFixed(1);
+                        const desc = data.weather[0].description;
+                        const icon = data.weather[0].icon;
+                        const location = data.name;
+                        const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+
+                        weatherEl.innerHTML = `
+                            <div class="flex items-center gap-2">
+                                <img src="${iconUrl}" alt="${desc}" class="w-8 h-8">
+                                <span>${location}: ${temp}°C, ${desc}</span>
+                            </div>
+                        `;
+                    })
+                    .catch(error => {
+                        console.error('Weather fetch error:', error);
+                        weatherEl.textContent = 'Weather unavailable';
+                    });
+            },
+            error => {
+                console.error('Geolocation error:', error);
+                weatherEl.textContent = 'Location not allowed';
+            }
+        );
+    } else {
+        weatherEl.textContent = 'Geolocation not supported';
+    }
 </script>
+
 
 
 
