@@ -63,7 +63,7 @@
         </ul>
     </div>
     
-    <!-- Hero Section -->
+    <!-- Hero Section ->
     <section class="bg-[#556B2F] text-white text-center py-20 relative overflow-hidden">
     <div class="container mx-auto relative z-10">
         <h2 class="text-4xl font-bold mb-4 fade-in">Your Trusted IT Partner</h2>
@@ -72,10 +72,64 @@
             Get Support Now
         </a>
     </div>
-    <!-- Canvas for network waves -->
+    <!-- Canvas for network waves ->
+    <canvas id="network-waves" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+    </section-->
+   <section class="bg-[#556B2F] text-white text-center py-20 relative overflow-hidden">
+    <!-- Date & Time (top-left) -->
+    <div id="datetime" class="absolute top-4 left-4 text-sm md:text-base font-medium z-20"></div>
+
+    <!-- Weather (top-right) -->
+    <div id="weather" class="absolute top-4 right-4 text-sm md:text-base font-medium z-20"></div>
+
+    <div class="container mx-auto relative z-10">
+        <h2 class="text-4xl font-bold mb-4 fade-in">Your Trusted IT Partner</h2>
+        <p class="text-lg mb-8 fade-in">Expert Solutions for All Your Tech Needs</p>
+        <a href="contact.html" class="bg-white text-gray-500 px-6 py-3 rounded-full font-bold hover:bg-blue-100 transition fade-in">
+            Get Support Now
+        </a>
+    </div>
     <canvas id="network-waves" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
 </section>
+<script>
+    // Update date and time every second
+    function updateDateTime() {
+        const now = new Date();
+        const dateTimeString = now.toLocaleString(); // Adjust locale if needed
+        document.getElementById('datetime').textContent = dateTimeString;
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime(); // Initial call
 
+    // Get current weather using OpenWeatherMap API (replace with your API key)
+    const apiKey = 'YOUR_API_KEY';
+    const city = 'Pietermaritzburg'; // Change to your city
+    const units = 'metric'; // or 'imperial'
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`)
+        .then(response => response.json())
+        .then(data => {
+            const temp = data.main.temp.toFixed(1);
+            const desc = data.weather[0].description;
+            document.getElementById('weather').textContent = `${city}: ${temp}°C, ${desc}`;
+        })
+        .catch(error => {
+            document.getElementById('weather').textContent = 'Weather unavailable';
+            console.error('Weather fetch error:', error);
+        });
+</script>
+
+
+
+
+
+
+
+
+
+    
+
+    
     <!-- Sliding Pictures Section -->
 <section class="relative mt-8">
     <div class="container mx-auto">
@@ -195,7 +249,7 @@
     <!-- Footer -->
     <footer class="bg-[#4B5320] text-white py-4">
         <div class="container mx-auto text-center">
-            <p>&copy; 2024 Tech Guardian IT Services. All Rights Reserved.</p>
+            <p>&copy; 2025 Tech Guardian IT Services. All Rights Reserved.</p>
         </div>
     </footer>
     <script src="scripts.js"></script>
