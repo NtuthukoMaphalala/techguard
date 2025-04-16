@@ -132,12 +132,15 @@
     </footer>
     <script src="scripts.js"></script>
     <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
+
+        toggleButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
