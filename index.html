@@ -218,6 +218,17 @@
         toggleButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
     });
+
+    const currentPage = location.pathname.split("/").pop(); // Get current page like 'index.html'
+  const menuLinks = document.querySelectorAll("ul li a");
+
+  menuLinks.forEach(link => {
+    const linkPage = link.getAttribute("href");
+    if (linkPage === currentPage) {
+      link.classList.remove("bg-blue-700", "text-white");
+      link.classList.add("bg-white", "text-blue-700", "border", "border-blue-700");
+    }
+  });
 </script>
 
 </body>
