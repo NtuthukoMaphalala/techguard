@@ -19,6 +19,10 @@
                 <img src="img/logo.png" alt="Logo" class="w-12 h-12 rounded-full border-2 border-white">
                 <h1 class="text-3xl font-bold tracking-wide">Tech Guardian IT Solutions</h1>
             </a>
+
+            <div id="quote" class="text-white text-sm italic mt-2 md:mt-0 md:ml-6">
+
+                
             <!-- Navigation Links -->
             <nav>
                 <ul class="hidden md:flex space-x-6">
@@ -229,6 +233,18 @@
       link.classList.add("bg-white", "text-blue-700", "border", "border-blue-700");
     }
   });
+
+    const quotes = [
+      "Believe you can and you're halfway there.",
+      "Keep your face always toward the sunshine—and shadows will fall behind you.",
+      "You are stronger than you think.",
+      "Every day may not be good... but there's something good in every day.",
+      "Your only limit is your mind.",
+      "Start each day with a positive thought and a grateful heart."
+    ];
+
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById("quote").innerText = randomQuote;
 </script>
 
 </body>
