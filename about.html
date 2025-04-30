@@ -8,6 +8,7 @@
     <link rel="icon" href="img/logo2.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body class="bg-[#B4BFA1] font-sans">
     <!-- Navigation Bar -->
@@ -18,38 +19,59 @@
                 <img src="img/logo.png" alt="Logo" class="w-12 h-12 rounded-full border-2 border-white">
                 <h1 class="text-3xl font-bold tracking-wide">Tech Guardian IT Solutions</h1>
             </a>
+        
             <!-- Navigation Links -->
-            <nav>
-                <ul class="hidden md:flex space-x-6">
-                    <li>
-                        <a href="index.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">
-                            Home
+            <nav class="relative">
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-6 items-center">
+                    <!-- Social Media Icons -->
+                    <li class="flex space-x-4">
+                        <a href="https://wa.me/+27722527328" target="_blank" title="WhatsApp" class="hover:scale-110 transition">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                        <a href="https://facebook.com/techguard_it_solutions" title="Facebook" target="_blank" class="hover:scale-110 transition">
+                            <i class="fab fa-facebook-f text-2xl"></i>
+                        </a>
+                        <a href="https://twitter.com/your-handle" target="_blank" title="X (Twitter)" class="hover:scale-110 transition">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/ntuthukomaphalala" target="_blank" title="LinkedIn" class="hover:scale-110 transition">
+                            <i class="fab fa-linkedin-in text-2xl"></i>
                         </a>
                     </li>
-                    <li>
-                        <a href="services.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">
-                            Services
-                        </a>
-                    </li>
-                    <li>
-                        <a href="about.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">
-                            About
-                        </a>
-                    </li>
-                    <li>
-                        <a href="contact.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">
-                            Contact
-                        </a>
-                    </li>
+        
+                    <!-- Navigation Items -->
+                    <li><a href="index.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">Home</a></li>
+                    <li><a href="services.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">Services</a></li>
+                    <li><a href="about.html" class="px-6 py-2 rounded-lg bg-white text-blue-700 font-semibold border border-blue-700 hover:bg-blue-100 transition duration-300 transform hover:scale-105">About</a></li>
+                    <li><a href="contact.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">Contact</a></li>
                 </ul>
+        
                 <!-- Mobile Menu (Hamburger) -->
                 <div class="md:hidden">
                     <button class="text-white" id="mobile-menu-button">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
+        
+                <!-- Mobile Menu Dropdown -->
+                <div id="mobile-menu" class="hidden absolute right-0 top-full bg-white shadow-md rounded-lg w-48 py-4 px-4 space-y-3 z-50">
+                    <!-- Social Icons -->
+                    <div class="flex justify-start space-x-4 mb-2">
+                        <a href="https://wa.me/your-number" target="_blank" class="text-[#25D366]"><i class="fab fa-whatsapp text-xl"></i></a>
+                        <a href="https://facebook.com/your-page" target="_blank" class="text-[#1877F2]"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="https://twitter.com/your-handle" target="_blank" class="text-[#1DA1F2]"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="https://linkedin.com/in/your-profile" target="_blank" class="text-[#0077B5]"><i class="fab fa-linkedin-in text-xl"></i></a>
+                    </div>
+        
+                    <!-- Nav Links -->
+                    <a href="index.html" class="block text-blue-700 font-semibold hover:text-blue-900">Home</a>
+                    <a href="services.html" class="block text-blue-700 font-semibold hover:text-blue-900">Services</a>
+                    <a href="about.html" class="block text-blue-700 font-semibold hover:text-blue-900">About</a>
+                    <a href="contact.html" class="block text-blue-700 font-semibold hover:text-blue-900">Contact</a>
+                </div>
             </nav>
-        </div>
+        </div>        
     </header>
 
     <!-- Mobile Menu -->
@@ -163,6 +185,7 @@
 
         toggleButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            menu.classList.toggle('hidden');
         });
     });
   const currentPage = location.pathname.split("/").pop(); // Get current page like 'index.html'
