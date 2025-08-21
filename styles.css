@@ -76,3 +76,113 @@ h2 {
         margin: 10px 0;
         }
     }
+
+.fade {
+    animation: fadeEffect 0.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0.4;}
+    to {opacity: 1;}
+}
+
+/* Slideshow container and image styling */
+.slideshow-container {
+    padding: 1rem;
+}
+
+.slide img {
+    transition: transform 0.4s ease;
+    min-height: 456px; /* 64 * 4 pixels */
+}
+
+.slide:hover img {
+    transform: scale(1.09);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slide img {
+        min-height: 1200px;
+    }
+}
+
+
+/* ... existing code ... */
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.transition-all {
+    transition: all 0.3s ease-in-out;
+}
+
+.hover\:scale-105:hover {
+    transform: scale(1.05);
+}
+
+/* Add gradient overlay for images */
+.image-overlay {
+    position: relative;
+}
+
+.image-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(75, 83, 32, 0.3), rgba(75, 83, 32, 0.6));
+    border-radius: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-overlay:hover::after {
+    opacity: 1;
+}
+
+
+
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+    /* Optional: smooth animation */
+    animation-timing-function: ease-in-out;
+}
+
+/* Responsive adjustments for student discount section */
+@media (max-width: 768px) {
+    /* Stack flex items vertically */
+    .md\:flex {
+        flex-direction: column !important;
+    }
+    
+    /* Full width for half-width elements */
+    .md\:w-1/2 {
+        width: 100% !important;
+    }
+    
+    /* Adjust padding */
+    .md\:p-12 {
+        padding: 2rem !important;
+    }
+}
