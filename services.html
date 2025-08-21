@@ -48,19 +48,23 @@
         
                 <!-- Mobile Menu Dropdown -->
                 <div id="mobile-menu" class="hidden absolute right-0 top-full bg-white shadow-md rounded-lg w-48 py-4 px-4 space-y-3 z-50">
-                    
-                    <!-- Nav Links -->
-                     <li>
-                        <a href="https://www.youtube.com/@fewourslive" target="_blank" 
-                        class="px-4 py-2 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-500 transition duration-300 transform hover:scale-105 inline-flex items-center">
-                            <i class="fab fa-youtube mr-2"></i> YouTube
-                        </a>
-                    </li>
-                    <a href="index.html" class="block text-blue-700 font-semibold hover:text-blue-900">Home</a>
-                    <a href="services.html" class="block text-blue-700 font-semibold hover:text-blue-900">Services</a>
-                    <a href="about.html" class="block text-blue-700 font-semibold hover:text-blue-900">About</a>
-                    <a href="contact.html" class="block text-blue-700 font-semibold hover:text-blue-900">Contact</a>
-                </div>
+                <!-- YouTube -->
+                <li>
+                    <a href="https://www.youtube.com/@fewourslive" target="_blank" 
+                    class="px-4 py-2 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-500 transition duration-300 transform hover:scale-105 inline-flex items-center">
+                        <i class="fab fa-youtube mr-2"></i> YouTube
+                    </a>
+                </li>
+
+                <!-- Nav Links -->
+                <a href="index.html" class="mobile-link block text-blue-700 font-semibold hover:text-blue-900">Home</a>
+                <a href="services.html" class="mobile-link block text-blue-700 font-semibold hover:text-blue-900">Services</a>
+                <a href="about.html" class="mobile-link block text-blue-700 font-semibold hover:text-blue-900">About</a>
+                <a href="contact.html" class="mobile-link block text-blue-700 font-semibold hover:text-blue-900">Contact</a>
+            </div>
+
+            
+
             </nav>
         </div>
         
@@ -99,32 +103,38 @@
 </section>
 
 
-    <section class="relative mt-8">
-    <div class="container mx-auto">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 slideshow-container" id="slideshow">
-            <div class="text-center slide">
-                <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">Hardware Repair</p>
-            </div>
-            <div class="text-center slide">
-                <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">Laptop Assembly</p>
-            </div>
-            <div class="text-center slide">
-                <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">Code Writing</p>
-            </div>
-            <div class="text-center slide">
-                <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">Analyzing Data</p>
-            </div>
-        </div>
-        
-        <!-- Navigation buttons -->
-        <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-2 py-4 rounded-r" id="prevBtn">❮</button>
-        <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-2 py-4 rounded-l" id="nextBtn">❯</button>
+   <section class="relative mt-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 slideshow-container" id="slideshow">
+      
+      <div class="text-center slide">
+        <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-48 sm:h-56 md:h-48 lg:h-56 object-cover rounded-lg zoom-on-hover">
+        <p class="mt-2 text-sm sm:text-base font-medium text-white">Hardware Repair</p>
+      </div>
+
+      <div class="text-center slide">
+        <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-48 sm:h-56 md:h-48 lg:h-56 object-cover rounded-lg zoom-on-hover">
+        <p class="mt-2 text-sm sm:text-base font-medium text-white">Laptop Assembly</p>
+      </div>
+
+      <div class="text-center slide">
+        <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-48 sm:h-56 md:h-48 lg:h-56 object-cover rounded-lg zoom-on-hover">
+        <p class="mt-2 text-sm sm:text-base font-medium text-white">Code Writing</p>
+      </div>
+
+      <div class="text-center slide">
+        <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-48 sm:h-56 md:h-48 lg:h-56 object-cover rounded-lg zoom-on-hover">
+        <p class="mt-2 text-sm sm:text-base font-medium text-white">Analyzing Data</p>
+      </div>
+
     </div>
+
+    <!-- Navigation buttons -->
+    <button class="absolute left-2 sm:left-0 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-2 py-3 sm:px-4 sm:py-4 rounded-r shadow-lg z-10" id="prevBtn">❮</button>
+    <button class="absolute right-2 sm:right-0 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-2 py-3 sm:px-4 sm:py-4 rounded-l shadow-lg z-10" id="nextBtn">❯</button>
+  </div>
 </section>
+
 
     <!-- Services Section -->
     <section class="">
@@ -251,6 +261,19 @@
       link.classList.add("bg-white", "text-blue-700", "border", "border-blue-700");
     }
   });
+
+  // Highlight current mobile page
+            const currentMobilePage = location.pathname.split("/").pop(); // e.g., 'index.html'
+            const mobileLinks = document.querySelectorAll("#mobile-menu .mobile-link");
+
+            mobileLinks.forEach(link => {
+                const linkPage = link.getAttribute("href");
+                if (linkPage === currentMobilePage) {
+                    link.classList.remove("text-blue-700");
+                    link.classList.add("bg-blue-700", "text-white", "rounded-lg");
+                }
+            });
+            
 </script>
 
 </body>
