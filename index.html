@@ -26,6 +26,12 @@
                 <!-- Desktop Menu -->
                 <ul class="hidden md:flex space-x-6 items-center">
                     <!-- Navigation Items -->
+                    <li>
+                        <a href="https://www.youtube.com/@fewourslive" target="_blank" 
+                        class="px-4 py-2 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-500 transition duration-300 transform hover:scale-105 inline-flex items-center">
+                            <i class="fab fa-youtube mr-2"></i> YouTube
+                        </a>
+                    </li>
                     <li><a href="index.html" class="px-6 py-2 rounded-lg bg-white text-blue-700 font-semibold border border-blue-700 hover:bg-blue-100 transition duration-300 transform hover:scale-105">Home</a></li>
                     <li><a href="services.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">Services</a></li>
                     <li><a href="about.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">About</a></li>
@@ -43,6 +49,12 @@
                 <div id="mobile-menu" class="hidden absolute right-0 top-full bg-white shadow-md rounded-lg w-48 py-4 px-4 space-y-3 z-50">
                     <!-- Social Icons -->
                     <!-- Nav Links -->
+                     <li>
+                        <a href="https://www.youtube.com/@fewourslive" target="_blank" 
+                        class="px-4 py-2 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-500 transition duration-300 transform hover:scale-105 inline-flex items-center">
+                            <i class="fab fa-youtube mr-2"></i> YouTube
+                        </a>
+                    </li>
                     <a href="index.html" class="block text-blue-700 font-semibold hover:text-blue-900">Home</a>
                     <a href="services.html" class="block text-blue-700 font-semibold hover:text-blue-900">Services</a>
                     <a href="about.html" class="block text-blue-700 font-semibold hover:text-blue-900">About</a>
@@ -238,14 +250,21 @@
             </a>
         </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#4B5320] text-white py-4">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2025 Tech Guardian IT Solutions. All Rights Reserved.</p>
-        </div>
-    </footer>
-    <script src="scripts.js"></script>
-    <script>
+   <!-- Footer -->
+<footer class="bg-[#4B5320] text-white py-4">
+  <div class="container mx-auto text-center">
+    <p id="footer-text"></p>
+  </div>
+</footer>
+
+<script>
+  // Dynamic Footer Year
+  const startYear = 2023;
+  const currentYear = new Date().getFullYear();
+  const footerText = document.getElementById("footer-text");
+
+  footerText.innerHTML = `&copy; ${startYear} - ${currentYear} TechGuard IT Solutions. All Rights Reserved.`;
+
         const toggleButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -253,6 +272,7 @@
             mobileMenu.classList.toggle('hidden');
             menu.classList.toggle('hidden');
     });
+
 
     const currentPage = location.pathname.split("/").pop(); // Get current page like 'index.html'
   const menuLinks = document.querySelectorAll("ul li a");
