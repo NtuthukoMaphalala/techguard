@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Guardian IT Solutions</title>
+    <title>TechGuard IT Solutions</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img/logo2.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,7 +17,7 @@
             <!-- Logo and Company Name -->
             <a href="index.html" class="flex items-center space-x-4">
                 <img src="img/logo.png" alt="Logo" class="w-12 h-12 rounded-full border-2 border-white">
-                <h1 class="text-3xl font-bold tracking-wide">Tech Guardian IT Solutions</h1>
+                <h1 class="text-3xl font-bold tracking-wide">TechGuard IT Solutions</h1>
             </a>
         
             <!-- Navigation Links -->
@@ -26,6 +26,12 @@
                 <ul class="hidden md:flex space-x-6 items-center">
                    
                     <!-- Navigation Items -->
+                     <li>
+                        <a href="https://www.youtube.com/@fewourslive" target="_blank" 
+                        class="px-4 py-2 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-500 transition duration-300 transform hover:scale-105 inline-flex items-center">
+                            <i class="fab fa-youtube mr-2"></i> YouTube
+                        </a>
+                    </li>
                     <li><a href="index.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">Home</a></li>
                     <li><a href="services.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">Services</a></li>
                     <li><a href="about.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">About</a></li>
@@ -43,6 +49,12 @@
                 <div id="mobile-menu" class="hidden absolute right-0 top-full bg-white shadow-md rounded-lg w-48 py-4 px-4 space-y-3 z-50">
                     
                     <!-- Nav Links -->
+                     <li>
+                        <a href="https://www.youtube.com/@fewourslive" target="_blank" 
+                        class="px-4 py-2 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-500 transition duration-300 transform hover:scale-105 inline-flex items-center">
+                            <i class="fab fa-youtube mr-2"></i> YouTube
+                        </a>
+                    </li>
                     <a href="index.html" class="block text-blue-700 font-semibold hover:text-blue-900">Home</a>
                     <a href="services.html" class="block text-blue-700 font-semibold hover:text-blue-900">Services</a>
                     <a href="about.html" class="block text-blue-700 font-semibold hover:text-blue-900">About</a>
@@ -63,11 +75,37 @@
         </ul>
     </div>
 
-    <!-- Page Header -->
-    <section class="bg-[#556B2F] text-white text-center py-12">
-        <h2 class="text-4xl font-bold">Contact Us</h2>
-        <p class="mt-2 text-lg">We would love to hear from you! Get in touch with us today.</p>
-    </section>
+    <!-- Contact Us Section -->
+<section class="bg-gradient-to-r from-[#556B2F] to-[#4B5320] text-white text-center py-20 relative overflow-hidden">
+  <!-- Floating Animation Canvas -->
+  <canvas id="contact-animation" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+
+  <div class="container mx-auto relative z-10">
+    <h2 class="text-5xl font-bold mb-6 fade-in">Contact Us</h2>
+    <p class="text-xl mb-8 fade-in max-w-2xl mx-auto">
+      We would love to hear from you! Whether you have questions, need support, 
+      or want to explore IT solutions, our team is ready to help.
+    </p>
+
+    <!-- CTA Button -->
+    <div class="space-x-4">
+      <a href="mailto:ntuthukomaphalala4@gmail.com" class="bg-white text-gray-800 px-8 py-4 rounded-full font-bold hover:bg-blue-100 transition-all transform hover:scale-105 inline-flex items-center">
+        Send an Email
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <a href="tel:+27722527328" class="bg-[#FFD700] text-gray-900 px-8 py-4 rounded-full font-bold hover:bg-yellow-300 transition-all transform hover:scale-105 inline-flex items-center">
+        Call Us
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h11M9 21V3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 
     <section class="py-16 bg-[#B4BFA1]">
         <div class="container mx-auto text-center">
@@ -80,7 +118,7 @@
                         <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
                         <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
                         <input type="text" name="subject" placeholder="Subject" class="w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
-                        <textarea name="message" rows="4" placeholder="Your Message" class="w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required></textarea>
+                        <textarea name="message" rows="4" placeholder="Your Message (Students include Student No.)" class="w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required></textarea>
                         <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">Send Message</button>
                     </form>
                 </div>
@@ -100,67 +138,104 @@
                             loading="lazy">
                         </iframe>
                     </div>
-                    <!-- Phone -->
+                
+                    <!-- Contact Card -->
+
                     <div class="bg-white p-6 rounded-lg shadow-md zoom-on-hover text-center">
-                        <!-- Phone -->
-                        <div class="mb-6">
-                            <i class="fas fa-phone-alt text-blue-600 text-3xl mb-2"></i>
-                            <h4 class="text-xl font-bold mb-1">Call Us</h4>
-                            <p class="text-gray-700">+27 72 252 7328</p>
-                        </div>
-                    
-                        <!-- WhatsApp -->
-                        <div class="mb-6">
-                            <a href="https://wa.me/27722527328" target="_blank" class="inline-flex flex-col items-center hover:scale-110 transition">
-                                <i class="fab fa-whatsapp text-green-500 text-3xl mb-1"></i>
-                                <span class="text-sm text-gray-700">Message on WhatsApp</span>
-                            </a>
-                        </div>
-                    
-                        <!-- Facebook -->
-                        <div class="mb-6">
-                            <a href="https://facebook.com/techguard_it_solutions" target="_blank" class="inline-flex flex-col items-center hover:scale-110 transition">
-                                <i class="fab fa-facebook-f text-blue-700 text-3xl mb-1"></i>
-                                <span class="text-sm text-gray-700">Follow on Facebook</span>
-                            </a>
-                        </div>
-                    
-                        <!-- LinkedIn -->
-                        <div class="mb-6">
-                            <a href="https://linkedin.com/in/ntuthukomaphalala" target="_blank" class="inline-flex flex-col items-center hover:scale-110 transition">
-                                <i class="fab fa-linkedin-in text-blue-600 text-3xl mb-1"></i>
-                                <span class="text-sm text-gray-700">Connect on LinkedIn</span>
-                            </a>
-                        </div>
-                    
-                        <!-- GitHub -->
-                        <div>
-                            <a href="https://github.com/NtuthukoMaphalala" target="_blank" class="inline-flex flex-col items-center hover:scale-110 transition">
-                                <i class="fab fa-github text-gray-800 text-3xl mb-1"></i>
-                                <span class="text-sm text-gray-700">Explore on GitHub</span>
-                            </a>
-                        </div>
+                        
+                    <!-- Phone -->
+                    <div class="mb-6">
+                        <a href="tel:+27722527328" class="inline-flex flex-col items-center hover:scale-110 transition">
+                        <i class="fas fa-phone-alt text-blue-600 text-3xl mb-2"></i>
+                        <h4 class="text-xl font-bold mb-1">Call Us</h4>
+                        <span class="text-gray-700 font-medium">+27 72 252 7328</span>
+                        </a>
                     </div>
-                    
+
+                    <!-- WhatsApp -->
+                    <div class="mb-6">
+                        <a href="https://wa.me/27722527328" target="_blank" class="inline-flex flex-col items-center hover:scale-110 transition">
+                        <i class="fab fa-whatsapp text-green-500 text-3xl mb-2"></i>
+                        <span class="text-gray-700 font-medium">Message on WhatsApp</span>
+                        </a>
+                    </div>
+
+                    <!-- Facebook -->
+                    <div class="mb-6">
+                        <a href="https://facebook.com/ntuthukomaphalalamsuthu" target="_blank" class="inline-flex flex-col items-center hover:scale-110 transition">
+                        <i class="fab fa-facebook-f text-blue-700 text-3xl mb-2"></i>
+                        <span class="text-gray-700 font-medium">Follow on Facebook</span>
+                        </a>
+                    </div>
+
+                    <!-- LinkedIn -->
+                    <div class="mb-6">
+                        <a href="https://linkedin.com/in/ntuthukomaphalala" target="_blank" class="inline-flex flex-col items-center hover:scale-110 transition">
+                        <i class="fab fa-linkedin-in text-blue-600 text-3xl mb-2"></i>
+                        <span class="text-gray-700 font-medium">Connect on LinkedIn</span>
+                        </a>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div>
+                        <a href="https://github.com/NtuthukoMaphalala" target="_blank" class="inline-flex flex-col items-center hover:scale-110 transition">
+                        <i class="fab fa-github text-gray-800 text-3xl mb-2"></i>
+                        <span class="text-gray-700 font-medium">Explore on GitHub</span>
+                        </a>
+                    </div>
+
+                    </div>
+
                     <!-- Email -->
-                    <div class="bg-white p-6 rounded-lg shadow-md zoom-on-hover">
+                    <div class="bg-white p-6 rounded-lg shadow-md zoom-on-hover text-center">
                         <i class="fas fa-envelope text-blue-600 text-3xl mb-4"></i>
                         <h4 class="text-xl font-bold mb-2">Email Us</h4>
-                        <p class="text-gray-700">ntuthukomaphalala4@gmail.com</p>
+                        <p class="text-gray-700 mb-4">ntuthukomaphalala4@gmail.com</p>
+
+                        <a href="mailto:ntuthukomaphalala4@gmail.com" 
+                            class="bg-white border border-blue-600 text-blue-600 px-6 py-2 rounded-full font-bold hover:bg-blue-600 hover:text-white transition-all transform hover:scale-105 inline-flex items-center">
+                            Send Email
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </div>
+
+                    <!-- YouTube -->
+                    <div class="bg-white p-6 rounded-lg shadow-md zoom-on-hover text-center">
+                    <i class="fab fa-youtube text-red-600 text-3xl mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">YouTube</h4>
+                    <p class="text-gray-700 mb-4">@fewourslive</p>
+
+                    <a href="https://www.youtube.com/@fewourslive" target="_blank"
+                        class="bg-white border border-red-600 text-red-600 px-6 py-2 rounded-full font-bold hover:bg-red-600 hover:text-white transition-all transform hover:scale-105 inline-flex items-center">
+                        Visit Channel
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#4B5320] text-white py-4">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2025 Tech Guardian IT Solutions. All Rights Reserved.</p>
-        </div>
-    </footer>
-    <script src="scripts.js"></script>
-    <script>
+<footer class="bg-[#4B5320] text-white py-4">
+  <div class="container mx-auto text-center">
+    <p id="footer-text"></p>
+  </div>
+</footer>
+
+<script>
+  // Dynamic Footer Year
+  const startYear = 2023;
+  const currentYear = new Date().getFullYear();
+  const footerText = document.getElementById("footer-text");
+
+  footerText.innerHTML = `&copy; ${startYear} - ${currentYear} TechGuard IT Solutions. All Rights Reserved.`;
+
     document.addEventListener('DOMContentLoaded', function () {
         const toggleButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
