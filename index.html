@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Guardian IT Solutions</title>
+    <title>TechGuard IT Solutions</title>
     <link rel="icon" href="img/logo2.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,7 +18,7 @@
             <!-- Logo and Company Name -->
             <a href="index.html" class="flex items-center space-x-4">
                 <img src="img/logo.png" alt="Logo" class="w-12 h-12 rounded-full border-2 border-white">
-                <h1 class="text-3xl font-bold tracking-wide">Tech Guardian IT Solutions</h1>
+                <h1 class="text-3xl font-bold tracking-wide">TechGuard IT Solutions</h1>
             </a>
         
             <!-- Navigation Links -->
@@ -64,120 +64,103 @@
         </ul>
     </div>
     
-    <section class="bg-[#556B2F] text-white text-center py-20 relative overflow-hidden">
-    <!-- Date & Time (top-left) -->
+<section class="bg-gradient-to-r from-[#556B2F] to-[#4B5320] text-white text-center py-20 relative overflow-hidden">    <!-- Date & Time (top-left) -->
     <div id="datetime" class="absolute top-4 left-4 text-base md:text-lg lg:text-xl font-semibold z-20"></div>
 
     <!-- Weather (top-right) -->
     <div id="weather" class="absolute top-4 right-4 text-base md:text-lg lg:text-xl font-semibold flex items-center gap-2 z-20"></div>
-
     <div class="container mx-auto relative z-10">
-        <h2 class="text-4xl font-bold mb-4 fade-in">Your Trusted IT Partner</h2>
-        <p class="text-lg mb-8 fade-in">Expert Solutions for All Your Tech Needs</p>
-        <a href="contact.html" class="bg-white text-gray-500 px-6 py-3 rounded-full font-bold hover:bg-blue-100 transition fade-in">
-            Get Support Now
-        </a>
+        <h2 class="text-5xl font-bold mb-6 fade-in animate-pulse">Your Trusted IT Partner</h2>
+        <p class="text-xl mb-8 fade-in max-w-2xl mx-auto">Transforming businesses through innovative tech solutions. Experience excellence in IT services.</p>
+        <div class="space-x-4">
+            <a href="contact.html" class="bg-white text-gray-800 px-8 py-4 rounded-full font-bold hover:bg-blue-100 transition-all transform hover:scale-105 inline-flex items-center">
+                Get Support Now
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+        </div>
     </div>
-    <canvas id="network-waves" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
 </section>
 
-
-    <!-- Sliding Pictures Section -->
 <section class="relative mt-8">
     <div class="container mx-auto">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <!-- Images with captions (only showing the first 3 initially) -->
-            <div class="text-center">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 slideshow-container" id="slideshow">
+            <div class="text-center slide">
                 <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Hardware Repair</p>
             </div>
-            <div class="text-center">
+            <div class="text-center slide">
                 <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Laptop Assembly</p>
             </div>
-            <div class="text-center">
+            <div class="text-center slide">
                 <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Code Writing</p>
             </div>
-            <!-- Additional images hidden initially -->
-            <div class="text-center hidden">
+            <div class="text-center slide">
                 <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
                 <p class="mt-2 text-sm font-medium text-white">Analyzing Data</p>
             </div>
-            <div class="text-center hidden">
-                <img src="img/img6.jpg" alt="Slide 5" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">Web Development</p>
-            </div>
-            <div class="text-center hidden">
-                <img src="img/img16.jpg" alt="Slide 4" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">Data Visualization</p>
-            </div>
-            <div class="text-center hidden">
-                <img src="img/img7.jpg" alt="Slide 6" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">Cloud Computing</p>
-            </div>
-            <div class="text-center hidden">
-                <img src="img/img8.png" alt="Slide 7" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">HomeAssistant Installation and Automation</p>
-            </div>
-            <div class="text-center hidden">
-                <img src="img/img9.jpeg" alt="Slide 8" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">Data Capturing with over 80% accuracy</p>
-            </div>
-            <div class="text-center hidden">
-                <img src="img/img10.jpg" alt="Slide 10" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">Computer Hardware Maintenance</p>
-            </div>
-            <div class="text-center hidden">
-                <img src="img/img12.jpg" alt="Slide 12" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">Cybersecurity</p>
-            </div>
-            <div class="text-center hidden">
-                <img src="img/img13.jpg" alt="Slide 13" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">Global Connectivity</p>
-            </div>
-            <div class="text-center hidden">
-                <img src="img/img14.jpg" alt="Slide 14" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">PC/Computer Repair</p>
-            </div>
-            <div class="text-center hidden">
-                <img src="img/img15.jpg" alt="Slide 15" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">Mobile Repair</p>
-            </div>
-            <div class="text-center hidden">
-                <img src="img/img17.png" alt="Slide 15" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">Operating System Installation (MacOS, Windows OS, Ubuntu OS)</p> 
-            </div>
-            <div class="text-center hidden">
-                <img src="img/img18.png" alt="Slide 4" class="w-full h-48 object-cover rounded-lg zoom-on-hover">
-                <p class="mt-2 text-sm font-medium text-white">...And Many More!</p>
-            </div>
         </div>
+        
+        <!-- Navigation buttons -->
+        <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-2 py-4 rounded-r" id="prevBtn">❮</button>
+        <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-2 py-4 rounded-l" id="nextBtn">❯</button>
+    </div>
+</section>
 
-        <!-- See more/less button -->
-        <div class="text-center mt-4">
-            <button id="see-more" class="text-white bg-blue-500 px-4 py-2 rounded">See More</button>
+<!-- stats-->
+<section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div class="p-6 bg-gray-50 rounded-lg transform hover:scale-105 transition-all">
+                <h3 class="text-4xl font-bold text-[#4B5320]">50+</h3>
+                <p class="text-gray-600">Projects Completed</p>
+            </div>
+            <div class="p-6 bg-gray-50 rounded-lg transform hover:scale-105 transition-all">
+                <h3 class="text-4xl font-bold text-[#4B5320]">24/7</h3>
+                <p class="text-gray-600">Support Available</p>
+            </div>
+            <div class="p-6 bg-gray-50 rounded-lg transform hover:scale-105 transition-all">
+                <h3 class="text-4xl font-bold text-[#4B5320]">98%</h3>
+                <p class="text-gray-600">Client Satisfaction</p>
+            </div>
+            <div class="p-6 bg-gray-50 rounded-lg transform hover:scale-105 transition-all">
+                <h3 class="text-4xl font-bold text-[#4B5320]">3+</h3>
+                <p class="text-gray-600">Years Experience</p>
+            </div>
         </div>
     </div>
 </section>
 
-    <section id="why-choose-us">
-        <h2 class="text-3xl font-bold mb-8 text-white">Why Choose Us?</h2>
-        <div class="reasons">
-            <div class="reason">
-                <h3><strong>Expertise:</strong></h3>
-                <p>We have a team of experienced professionals ready to tackle your challenges.</p>
+<section id="why-choose-us" class="py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-white text-center">Why Choose Us?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all">
+                <div class="text-[#4B5320] mb-4">
+                    <i class="fas fa-star text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Expertise</h3>
+                <p class="text-gray-600">Industry-leading professionals with proven track record in delivering exceptional IT solutions.</p>
             </div>
-            <div class="reason">
-                <h3><strong>Customer Support:</strong></h3>
-                <p>Our customer service is available 24/7 to assist you with your needs.</p>
+            <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all">
+                <div class="text-[#4B5320] mb-4">
+                    <i class="fas fa-headset text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">24/7 Support</h3>
+                <p class="text-gray-600">Round-the-clock customer service ensuring your business never stops.</p>
             </div>
-            <div class="reason">
-                <h3><strong>Affordable Prices:</strong></h3>
-                <p>We provide high-quality services at competitive rates.</p>
+            <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all">
+                <div class="text-[#4B5320] mb-4">
+                    <i class="fas fa-shield-alt text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Reliable Security</h3>
+                <p class="text-gray-600">State-of-the-art security measures to protect your valuable data.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <section id="faq">
         <h2 class="text-3xl font-bold mb-8 text-white">Frequently Asked Questions</h2>
