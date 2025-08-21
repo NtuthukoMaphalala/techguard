@@ -46,21 +46,24 @@
         
                 <!-- Mobile Menu Dropdown -->
                 <div id="mobile-menu" class="hidden absolute right-0 top-full bg-white shadow-md rounded-lg w-48 py-4 px-4 space-y-3 z-50">
-                    
-                    <!-- Nav Links -->
-                     <li>
-                        <a href="https://www.youtube.com/@fewourslive" target="_blank" 
-                        class="px-4 py-2 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-500 transition duration-300 transform hover:scale-105 inline-flex items-center">
-                            <i class="fab fa-youtube mr-2"></i> YouTube
-                        </a>
-                    </li>
-                    <a href="index.html" class="block text-blue-700 font-semibold hover:text-blue-900">Home</a>
-                    <a href="services.html" class="block text-blue-700 font-semibold hover:text-blue-900">Services</a>
-                    <a href="about.html" class="block text-blue-700 font-semibold hover:text-blue-900">About</a>
-                    <a href="contact.html" class="block text-blue-700 font-semibold hover:text-blue-900">Contact</a>
-                </div>
+                <!-- YouTube -->
+                <li>
+                    <a href="https://www.youtube.com/@fewourslive" target="_blank" 
+                    class="px-4 py-2 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-500 transition duration-300 transform hover:scale-105 inline-flex items-center">
+                        <i class="fab fa-youtube mr-2"></i> YouTube
+                    </a>
+                </li>
+
+                <!-- Nav Links -->
+                <a href="index.html" class="mobile-link block text-blue-700 font-semibold hover:text-blue-900">Home</a>
+                <a href="services.html" class="mobile-link block text-blue-700 font-semibold hover:text-blue-900">Services</a>
+                <a href="about.html" class="mobile-link block text-blue-700 font-semibold hover:text-blue-900">About</a>
+                <a href="contact.html" class="mobile-link block text-blue-700 font-semibold hover:text-blue-900">Contact</a>
+            </div>
+
             </nav>
-        </div>        
+        </div>
+        
     </header>
 
     <!-- Mobile Menu -->
@@ -204,6 +207,18 @@
       link.classList.add("bg-white", "text-blue-700", "border", "border-blue-700");
     }
   });
+
+// Highlight current mobile page
+            const currentMobilePage = location.pathname.split("/").pop(); // e.g., 'index.html'
+            const mobileLinks = document.querySelectorAll("#mobile-menu .mobile-link");
+
+            mobileLinks.forEach(link => {
+                const linkPage = link.getAttribute("href");
+                if (linkPage === currentMobilePage) {
+                    link.classList.remove("text-blue-700");
+                    link.classList.add("bg-blue-700", "text-white", "rounded-lg");
+                }
+            });
 </script>
 
 </body>
