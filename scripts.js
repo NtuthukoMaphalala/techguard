@@ -1,6 +1,4 @@
-// ================================
-// FAQ Toggle
-// ================================
+// FAQ toggle
 document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', () => {
         const answer = question.nextElementSibling;
@@ -14,43 +12,32 @@ document.querySelectorAll('.faq-question').forEach(question => {
     });
 });
 
-// ================================
-// Animation Loop (if canvas & particles exist)
-// ================================
-if (typeof ctx !== "undefined" && typeof particles !== "undefined") {
-    const animate = () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach((particle) => {
-            particle.update();
-            particle.draw();
-        });
-        if (typeof drawConnections === "function") drawConnections();
-        requestAnimationFrame(animate);
-    };
-    animate();
-}
+// Animation loop (assuming ctx and particles are defined)
+const animate = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((particle) => {
+        particle.update();
+        particle.draw();
+    });
+    drawConnections();
+    requestAnimationFrame(animate);
+};
+animate();
 
-// ================================
-// Date & Time Update
-// ================================
+// Update date and time every second
 function updateDateTime() {
-    const dateTimeEl = document.getElementById('datetime');
-    if (!dateTimeEl) return;
-
     const now = new Date();
     const dateTimeString = now.toLocaleString();
-    dateTimeEl.textContent = dateTimeString;
+    document.getElementById('datetime').textContent = dateTimeString;
 }
 setInterval(updateDateTime, 1000);
 updateDateTime();
 
-// ================================
 // Weather using user's location
-// ================================
-const weatherEl = document.getElementById('weather');
 const apiKey = '07bf5d50456b5181632845cd6b13ad91';
+const weatherEl = document.getElementById('weather');
 
-if (weatherEl && 'geolocation' in navigator) {
+if ('geolocation' in navigator) {
     navigator.geolocation.getCurrentPosition(
         position => {
             const lat = position.coords.latitude;
@@ -82,51 +69,45 @@ if (weatherEl && 'geolocation' in navigator) {
             weatherEl.textContent = 'Location not allowed';
         }
     );
-} else if (weatherEl) {
+} else {
     weatherEl.textContent = 'Geolocation not supported';
 }
 
-// ================================
-// Mobile Menu Toggle
-// ================================
+// Mobile menu toggle
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
-if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-}
+mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
 
-// ================================
-// See More Toggle
-// ================================
+// See More toggle
 const seeMoreButton = document.getElementById("see-more");
-if (seeMoreButton) {
-    seeMoreButton.addEventListener("click", () => {
-        const hiddenItems = document.querySelectorAll('.text-center.hidden');
-        hiddenItems.forEach(item => item.classList.toggle('hidden'));
-        seeMoreButton.textContent = seeMoreButton.textContent === "See More" ? "See Less" : "See More";
-    });
-}
+seeMoreButton.addEventListener("click", () => {
+    const hiddenItems = document.querySelectorAll('.text-center.hidden');
+    hiddenItems.forEach(item => item.classList.toggle('hidden'));
+    seeMoreButton.textContent = seeMoreButton.textContent === "See More" ? "See Less" : "See More";
+});
 
-// ================================
-// Highlight Current Page
-// ================================
+// Highlight current mobile page
+const currentMobilePage = location.pathname.split("/").pop(); // e.g., 'index.html'
+document.querySelectorAll("#mobile-menu .mobile-link").forEach(link => {
+    if (link.getAttribute("href") === currentMobilePage) {
+        link.classList.remove("text-blue-700");
+        link.classList.add("bg-blue-700", "text-white", "rounded-lg");
+    }
+});
+
+// Dynamic footer year
+const startYear = 2023;
+const currentYear = new Date().getFullYear();
+document.getElementById("footer-text").innerHTML = `&copy; ${startYear} - ${currentYear} TechGuard IT Solutions. All Rights Reserved.`;
+
+// Highlight current desktop menu page
 const currentPage = location.pathname.split("/").pop();
-
-// Desktop menu links
 document.querySelectorAll("ul li a").forEach(link => {
     if (link.getAttribute("href") === currentPage) {
         link.classList.remove("bg-blue-700", "text-white");
         link.classList.add("bg-white", "text-blue-700", "border", "border-blue-700");
-    }
-});
-
-// Mobile menu links
-document.querySelectorAll("#mobile-menu .mobile-link").forEach(link => {
-    if (link.getAttribute("href") === currentPage) {
-        link.classList.remove("text-blue-700");
-        link.classList.add("bg-blue-700", "text-white", "rounded-lg");
     }
 });
