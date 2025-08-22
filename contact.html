@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img/logo2.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5066023174174931"
+     crossorigin="anonymous">
+  </script>
 </head>
 <body class="bg-[#B4BFA1] font-sans">
     <!-- Navigation Bar -->
@@ -26,12 +29,12 @@
                 <ul class="hidden md:flex space-x-6 items-center">
                    
                     <!-- Navigation Items -->
-                     <li>
-                        <a href="https://www.youtube.com/@fewourslive" target="_blank" 
-                        class="px-4 py-2 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-500 transition duration-300 transform hover:scale-105 inline-flex items-center">
-                            <i class="fab fa-youtube mr-2"></i> YouTube
-                        </a>
-                    </li>
+                    <a href="https://www.youtube.com/@fewourslive" target="_blank" 
+                    class="block px-4 py-2 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-500 
+                            transition duration-300 transform hover:scale-105 inline-flex items-center">
+                        <i class="fab fa-youtube mr-2"></i> YouTube
+                    </a>
+
                     <li><a href="index.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">Home</a></li>
                     <li><a href="services.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">Services</a></li>
                     <li><a href="about.html" class="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105">About</a></li>
@@ -98,6 +101,17 @@
   </div>
 </section>
 
+<!-- AdSense Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5066023174174931"
+     data-ad-slot="9620430958"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
     <section class="py-16 bg-[#B4BFA1]">
         <div class="container mx-auto text-center">
             <h3 class="text-3xl font-bold mb-8">Get in Touch</h3>
@@ -139,6 +153,17 @@
                         Send Message
                     </button>
                 </form>
+
+                <!-- AdSense Ad -->
+<amp-ad width="100vw" height="320"
+     type="adsense"
+     data-ad-client="ca-pub-5066023174174931"
+     data-ad-slot="7230087248"
+     data-auto-format="rspv"
+     data-full-width="">
+  <div overflow=""></div>
+</amp-ad>
+
 
                 </div>
                 <!-- Contact Info -->
@@ -250,151 +275,97 @@
 </footer>
 
 <script>
-  // Dynamic Footer Year
-  const startYear = 2023;
-  const currentYear = new Date().getFullYear();
-  const footerText = document.getElementById("footer-text");
+document.addEventListener('DOMContentLoaded', function () {
+    // -----------------------
+    // Footer Year
+    // -----------------------
+    const startYear = 2023;
+    const currentYear = new Date().getFullYear();
+    const footerText = document.getElementById("footer-text");
+    footerText.innerHTML = `&copy; ${startYear} - ${currentYear} TechGuard IT Solutions. All Rights Reserved.`;
 
-  footerText.innerHTML = `&copy; ${startYear} - ${currentYear} TechGuard IT Solutions. All Rights Reserved.`;
+    // -----------------------
+    // Mobile Menu Toggle
+    // -----------------------
+    const toggleButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const toggleButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        toggleButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menu.classList.toggle('hidden');
-        });
+    toggleButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
     });
 
-    const currentPage = location.pathname.split("/").pop(); // Get current page like 'index.html'
-  const menuLinks = document.querySelectorAll("ul li a");
+    // -----------------------
+    // Highlight Current Desktop Menu Link
+    // -----------------------
+    const currentPage = location.pathname.split("/").pop(); // e.g., 'index.html'
+    const menuLinks = document.querySelectorAll("ul li a");
 
-  menuLinks.forEach(link => {
-    const linkPage = link.getAttribute("href");
-    if (linkPage === currentPage) {
-      link.classList.remove("bg-blue-700", "text-white");
-      link.classList.add("bg-white", "text-blue-700", "border", "border-blue-700");
-    }
-  });
+    menuLinks.forEach(link => {
+        const linkPage = link.getAttribute("href");
+        if (linkPage === currentPage) {
+            link.classList.remove("bg-blue-700", "text-white");
+            link.classList.add("bg-white", "text-blue-700", "border", "border-blue-700");
+        }
+    });
 
-// Highlight current mobile page
-            const currentMobilePage = location.pathname.split("/").pop(); // e.g., 'index.html'
-            const mobileLinks = document.querySelectorAll("#mobile-menu .mobile-link");
+    // -----------------------
+    // Highlight Current Mobile Menu Link
+    // -----------------------
+    const mobileLinks = document.querySelectorAll("#mobile-menu .mobile-link");
+    mobileLinks.forEach(link => {
+        const linkPage = link.getAttribute("href");
+        if (linkPage === currentPage) {
+            link.classList.remove("text-blue-700");
+            link.classList.add("bg-blue-700", "text-white", "rounded-lg");
+        }
+    });
 
-            mobileLinks.forEach(link => {
-                const linkPage = link.getAttribute("href");
-                if (linkPage === currentMobilePage) {
-                    link.classList.remove("text-blue-700");
-                    link.classList.add("bg-blue-700", "text-white", "rounded-lg");
+    // -----------------------
+    // Form Submission (FormSpree)
+    // -----------------------
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const button = contactForm.querySelector('button[type="submit"]');
+            const originalText = button.innerText;
+            button.innerText = 'Sending...';
+            button.disabled = true;
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: contactForm.method,
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    showMessage('success', "✅ Message sent successfully! We'll get back to you soon.");
+                    contactForm.reset();
+                } else {
+                    showMessage('error', "❌ Something went wrong. Please try again.");
                 }
-            });
-</script>
-
-// Add before closing </body> tag
-
-<script>
-document.querySelector('form').addEventListener('submit', function(e) {
-    const button = e.target.querySelector('button[type="submit"]');
-    const originalText = button.innerText;
-    button.innerText = 'Sending...';
-    button.disabled = true;
-
-    // Re-enable after submission
-    setTimeout(() => {
-        button.innerText = originalText;
-        button.disabled = false;
-        
-        // Show success message
-        const successMsg = document.createElement('div');
-        successMsg.className = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-4';
-        successMsg.innerHTML = 'Message sent successfully! We\'ll get back to you soon.';
-        e.target.appendChild(successMsg);
-
-        // Remove success message after 5 seconds
-        setTimeout(() => successMsg.remove(), 5000);
-    }, 2000);
-});
-</script>
-
-// Add before closing </body> tag
-
-<script>
-// Form submission handling
-const form = document.querySelector('form');
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const button = e.target.querySelector('button[type="submit"]');
-    const originalText = button.innerText;
-    button.innerText = 'Sending...';
-    button.disabled = true;
-
-    // Submit form using FormSpree
-    fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: {
-            'Accept': 'application/json'
-        }
-    }).then(response => {
-        if (response.ok) {
-            showSuccessMessage();
-            form.reset();
-        } else {
-            showErrorMessage();
-        }
-    }).catch(() => {
-        showErrorMessage();
-    }).finally(() => {
-        button.innerText = originalText;
-        button.disabled = false;
-    });
-});
-
-function showSuccessMessage() {
-    const successMsg = document.createElement('div');
-    successMsg.className = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-4 animate-fade-in';
-    successMsg.innerHTML = 'Message sent successfully! We\'ll get back to you soon.';
-    form.appendChild(successMsg);
-    setTimeout(() => successMsg.remove(), 5000);
-}
-
-function showErrorMessage() {
-    const errorMsg = document.createElement('div');
-    errorMsg.className = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4 animate-fade-in';
-    form.appendChild(errorMsg);
-    setTimeout(() => errorMsg.remove(), 5000);
-}
-
-// Clear contact form after submit
-const contactForm = document.getElementById("contact-form");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", async (e) => {
-    e.preventDefault(); // prevent default for AJAX-style handling
-
-    const formData = new FormData(contactForm);
-    const action = contactForm.action;
-
-    try {
-      const response = await fetch(action, {
-        method: contactForm.method,
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        alert("✅ Message sent successfully!");
-        contactForm.reset(); // clear the form
-      } else {
-        alert("❌ Something went wrong. Please try again.");
-      }
-    } catch (error) {
-      alert("⚠️ Network error. Please try again later.");
+            } catch (error) {
+                showMessage('error', "⚠️ Network error. Please try again later.");
+            } finally {
+                button.innerText = originalText;
+                button.disabled = false;
+            }
+        });
     }
-  });
-}
+
+    function showMessage(type, text) {
+        const msg = document.createElement('div');
+        msg.className = type === 'success'
+            ? 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-4'
+            : 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4';
+        msg.innerText = text;
+        contactForm.appendChild(msg);
+        setTimeout(() => msg.remove(), 5000);
+    }
+});
 </script>
+
 </body>
 </html>
