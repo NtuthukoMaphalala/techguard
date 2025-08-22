@@ -65,17 +65,6 @@
         </div>
         
     </header>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden bg-[#4B5320] text-white md:hidden">
-        <ul class="space-y-4 p-4">
-            <li><a href="index.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Home</a></li>
-            <li><a href="services.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Services</a></li>
-            <li><a href="about.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">About</a></li>
-            <li><a href="contact.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Contact</a></li>
-        </ul>
-    </div>
-    
     
    <!-- About Us Section -->
 <section class="bg-gradient-to-r from-[#556B2F] to-[#4B5320] text-white text-center py-20 relative overflow-hidden">
@@ -140,6 +129,36 @@
         </div>
     </section>
 
+
+    <!-- Core Values Section -->
+<section class="py-16 bg-[#B4BFA1]">
+    <div class="container mx-auto">
+        <h3 class="text-3xl font-bold mb-8 text-center">Our Core Values</h3>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md zoom-on-hover">
+                <i class="fas fa-shield-alt text-4xl text-blue-600 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2">Integrity</h4>
+                <p class="text-gray-700">We maintain the highest standards of professional ethics and honesty.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md zoom-on-hover">
+                <i class="fas fa-lightbulb text-4xl text-blue-600 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2">Innovation</h4>
+                <p class="text-gray-700">We continuously evolve and adapt to new technologies.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md zoom-on-hover">
+                <i class="fas fa-users text-4xl text-blue-600 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2">Collaboration</h4>
+                <p class="text-gray-700">We work together to achieve exceptional results.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md zoom-on-hover">
+                <i class="fas fa-star text-4xl text-blue-600 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2">Excellence</h4>
+                <p class="text-gray-700">We strive for excellence in everything we do.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
     <!-- Team Section -->
 <section class="py-16 bg-[#B4BFA1]">
     <div class="container mx-auto text-center">
@@ -196,6 +215,7 @@
             mobileMenu.classList.toggle('hidden');
             menu.classList.toggle('hidden');
         });
+        
     });
   const currentPage = location.pathname.split("/").pop(); // Get current page like 'index.html'
   const menuLinks = document.querySelectorAll("ul li a");
@@ -219,6 +239,43 @@
                     link.classList.add("bg-blue-700", "text-white", "rounded-lg");
                 }
             });
+</script>
+
+
+<script>
+// ...existing code...
+
+// Add smooth scroll animation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Add animation for team members
+const teamMembers = document.querySelectorAll('.zoom-on-hover');
+const observerOptions = {
+    threshold: 0.2
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+teamMembers.forEach(member => {
+    member.style.opacity = '0';
+    member.style.transform = 'translateY(50px)';
+    member.style.transition = 'all 0.6s ease-out';
+    observer.observe(member);
+});
 </script>
 
 </body>
