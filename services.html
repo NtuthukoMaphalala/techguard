@@ -63,24 +63,10 @@
                 <a href="contact.html" class="mobile-link block text-blue-700 font-semibold hover:text-blue-900">Contact</a>
             </div>
 
-            
-
             </nav>
         </div>
         
     </header>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden bg-[#4B5320] text-white md:hidden">
-        <ul class="space-y-4 p-4">
-            <li><a href="index.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Home</a></li>
-            <li><a href="services.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Services</a></li>
-            <li><a href="about.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">About</a></li>
-            <li><a href="contact.html" class="block text-lg font-semibold hover:bg-blue-500 py-2 px-6">Contact</a></li>
-        </ul>
-    </div>
-
-
 
 <!-- Services Section -->
 <section class="bg-gradient-to-r from-[#556B2F] to-[#4B5320] text-white text-center py-20 relative overflow-hidden">
@@ -102,39 +88,22 @@
   </div>
 </section>
 
-
-   <section class="relative mt-8">
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 slideshow-container" id="slideshow">
-      
-      <div class="text-center slide">
-        <img src="img/img1.JPEG" alt="Slide 1" class="w-full h-48 sm:h-56 md:h-48 lg:h-56 object-cover rounded-lg zoom-on-hover">
-        <p class="mt-2 text-sm sm:text-base font-medium text-white">Hardware Repair</p>
-      </div>
-
-      <div class="text-center slide">
-        <img src="img/img2.JPEG" alt="Slide 2" class="w-full h-48 sm:h-56 md:h-48 lg:h-56 object-cover rounded-lg zoom-on-hover">
-        <p class="mt-2 text-sm sm:text-base font-medium text-white">Laptop Assembly</p>
-      </div>
-
-      <div class="text-center slide">
-        <img src="img/img3.JPEG" alt="Slide 3" class="w-full h-48 sm:h-56 md:h-48 lg:h-56 object-cover rounded-lg zoom-on-hover">
-        <p class="mt-2 text-sm sm:text-base font-medium text-white">Code Writing</p>
-      </div>
-
-      <div class="text-center slide">
-        <img src="img/img5.JPEG" alt="Slide 4" class="w-full h-48 sm:h-56 md:h-48 lg:h-56 object-cover rounded-lg zoom-on-hover">
-        <p class="mt-2 text-sm sm:text-base font-medium text-white">Analyzing Data</p>
-      </div>
-
+<section class="relative mt-8">
+    <div class="container mx-auto px-4">
+        <!-- Slideshow container -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4" id="slideshow">
+            <!-- Images will be inserted here by JavaScript -->
+        </div>
+        
+        <!-- Navigation buttons -->
+        <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#4B5320] text-white px-4 py-8 rounded-r-lg opacity-75 hover:opacity-100 transition-opacity">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#4B5320] text-white px-4 py-8 rounded-l-lg opacity-75 hover:opacity-100 transition-opacity">
+            <i class="fas fa-chevron-right"></i>
+        </button>
     </div>
-
-    <!-- Navigation buttons -->
-    <button class="absolute left-2 sm:left-0 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-2 py-3 sm:px-4 sm:py-4 rounded-r shadow-lg z-10" id="prevBtn">❮</button>
-    <button class="absolute right-2 sm:right-0 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-2 py-3 sm:px-4 sm:py-4 rounded-l shadow-lg z-10" id="nextBtn">❯</button>
-  </div>
 </section>
-
 
     <!-- Services Section -->
     <section class="">
@@ -273,6 +242,91 @@
                     link.classList.add("bg-blue-700", "text-white", "rounded-lg");
                 }
             });
+
+
+// Slideshow functionality
+const slides = [
+    { src: "img/img1.JPEG", caption: "Hardware Repair" },
+    { src: "img/img2.JPEG", caption: "Laptop Assembly" },
+    { src: "img/img3.JPEG", caption: "Code Writing" },
+    { src: "img/img5.JPEG", caption: "Analyzing Data" },
+    { src: "img/img6.jpg", caption: "Web Development" },
+    { src: "img/img7.jpg", caption: "Cloud Computing" },
+    { src: "img/img8.png", caption: "HomeAssistant Installation" },
+    { src: "img/img9.jpeg", caption: "Data Capturing" },
+    { src: "img/img10.jpg", caption: "Hardware Maintenance" },
+    { src: "img/img12.jpg", caption: "Cybersecurity" },
+    { src: "img/img13.jpg", caption: "Global Connectivity" },
+    { src: "img/img14.jpg", caption: "PC Repair" },
+    { src: "img/img15.jpg", caption: "Mobile Repair" },
+    { src: "img/img16.jpg", caption: "Data Visualization" },
+    { src: "img/img17.png", caption: "OS Installation" },
+    { src: "img/img18.png", caption: "And More!" }
+];
+
+let currentIndex = 0;
+const slidesPerView = 4;
+
+function updateSlideshow() {
+    const container = document.getElementById('slideshow');
+    container.innerHTML = '';
+    
+    for(let i = 0; i < slidesPerView; i++) {
+        const index = (currentIndex + i) % slides.length;
+        const div = document.createElement('div');
+        div.className = 'text-center slide fade';
+        div.innerHTML = `
+            <img src="${slides[index].src}" alt="${slides[index].caption}" 
+                 class="w-full h-48 sm:h-56 md:h-48 lg:h-56 object-cover rounded-lg zoom-on-hover">
+            <p class="mt-2 text-sm sm:text-base font-medium text-white">${slides[index].caption}</p>
+        `;
+        container.appendChild(div);
+    }
+}
+
+// Navigation functions
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlideshow();
+}
+
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlideshow();
+}
+
+// Auto slide every 3 seconds
+let slideInterval;
+function startAutoSlide() {
+    slideInterval = setInterval(nextSlide, 3000);
+}
+
+function stopAutoSlide() {
+    clearInterval(slideInterval);
+}
+
+// Initialize slideshow
+document.addEventListener('DOMContentLoaded', () => {
+    updateSlideshow();
+    startAutoSlide();
+
+    // Add button event listeners
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        stopAutoSlide();
+        prevSlide();
+        startAutoSlide();
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        stopAutoSlide();
+        nextSlide();
+        startAutoSlide();
+    });
+
+    // Pause auto-slide when hovering over slideshow
+    document.querySelector('.slideshow-container').addEventListener('mouseenter', stopAutoSlide);
+    document.querySelector('.slideshow-container').addEventListener('mouseleave', startAutoSlide);
+});
             
 </script>
 
