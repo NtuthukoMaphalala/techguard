@@ -363,11 +363,38 @@ function showSuccessMessage() {
 function showErrorMessage() {
     const errorMsg = document.createElement('div');
     errorMsg.className = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4 animate-fade-in';
-    errorMsg.innerHTML = 'Oops! Something went wrong. Please try again.';
     form.appendChild(errorMsg);
     setTimeout(() => errorMsg.remove(), 5000);
 }
-</script>
 
+// Clear contact form after submit
+const contactForm = document.getElementById("contact-form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault(); // prevent default for AJAX-style handling
+
+    const formData = new FormData(contactForm);
+    const action = contactForm.action;
+
+    try {
+      const response = await fetch(action, {
+        method: contactForm.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        alert("✅ Message sent successfully!");
+        contactForm.reset(); // clear the form
+      } else {
+        alert("❌ Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("⚠️ Network error. Please try again later.");
+    }
+  });
+}
+</script>
 </body>
 </html>
