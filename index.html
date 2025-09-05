@@ -88,14 +88,15 @@
         </div>
         
     </header>
-    
-<section class="bg-gradient-to-r from-[#556B2F] to-[#4B5320] text-white text-center py-20 relative overflow-hidden">    
-    <!-- Date & Time (top-left) -->
-    <div id="datetime" class="absolute top-4 left-4 text-base md:text-lg lg:text-xl font-semibold z-20"></div>
 
-    <!-- Weather (top-right) -->
-    <div id="weather" class="absolute top-4 right-4 text-base md:text-lg lg:text-xl font-semibold flex items-center gap-2 z-20"></div>
-    
+<section class="bg-gradient-to-r from-[#556B2F] to-[#4B5320] text-white text-center py-20 relative overflow-hidden">
+
+    <!-- Top Bar: Time (left) & Weather (right) -->
+    <div class="absolute top-4 left-0 right-0 px-8 flex justify-between items-center z-20">
+        <div id="current-time" class="text-xl font-bold"></div>
+        <div id="weather" class="flex items-center space-x-2 text-xl font-bold"></div>
+    </div>
+
     <div class="container mx-auto relative z-10">
         <h2 class="text-5xl font-bold mb-6 fade-in animate-pulse">Your Trusted IT Partner</h2>
         <p class="text-xl mb-8 fade-in max-w-2xl mx-auto">
@@ -112,20 +113,86 @@
             </a>
         </div>
 
-<!-- TechGuard Sidebar Ad. -->
-<div class="ad-container my-8">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-5066023174174931"
-       data-ad-slot="9073636041"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
-
+        <!-- TechGuard Sidebar Ad. -->
+        <div class="ad-container my-8">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-5066023174174931"
+               data-ad-slot="9073636041"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+               (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+    </div>
 </section>
+
+<script>
+const API_KEY = '07bf5d50456b5181632845cd6b13ad91';
+
+// Format time: dd - mmm - yyyy hh:mm:ss
+function formatTime(date) {
+    const dd = String(date.getDate()).padStart(2, '0');
+    const mmm = date.toLocaleString('en-us', { month: 'short' });
+    const yyyy = date.getFullYear();
+    const hh = String(date.getHours()).padStart(2, '0');
+    const min = String(date.getMinutes()).padStart(2, '0');
+    const sec = String(date.getSeconds()).padStart(2, '0');
+    return `${dd} - ${mmm} - ${yyyy} ${hh}:${min}:${sec}`;
+}
+
+// Update time every second
+function updateTime() {
+    const now = new Date();
+    document.getElementById('current-time').textContent = formatTime(now);
+}
+setInterval(updateTime, 1000);
+updateTime();
+
+// Fetch weather from OpenWeatherMap
+function fetchWeather(lat, lon) {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`)
+        .then(res => res.json())
+        .then(data => {
+            const weatherDiv = document.getElementById('weather');
+            const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+            weatherDiv.innerHTML = `
+                <img src="${iconUrl}" alt="${data.weather[0].description}" class="w-10 h-10">
+                <span>${data.name}: ${data.weather[0].main}</span>
+            `;
+        })
+        .catch(err => console.error(err));
+}
+
+// Get user location
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(pos => {
+        fetchWeather(pos.coords.latitude, pos.coords.longitude);
+    }, err => {
+        console.error('Location access denied:', err);
+        document.getElementById('weather').textContent = 'Weather unavailable';
+    });
+} else {
+    document.getElementById('weather').textContent = 'Geolocation not supported';
+}
+
+function fetchWeather(lat, lon) {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`)
+        .then(res => res.json())
+        .then(data => {
+            const weatherDiv = document.getElementById('weather');
+            const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+            const temp = Math.round(data.main.temp); // temperature in °C
+            weatherDiv.innerHTML = `
+                <img src="${iconUrl}" alt="${data.weather[0].description}" class="w-10 h-10">
+                <span>${data.name}: ${data.weather[0].main}, ${temp}°C</span>
+            `;
+        })
+        .catch(err => console.error(err));
+}
+
+</script>
 
 <section class="py-16 bg-gradient-to-r from-blue-500 to-blue-600">
     <div class="container mx-auto px-4">
@@ -322,7 +389,7 @@
 
 
     const currentPage = location.pathname.split("/").pop(); // Get current page like 'index.html'
-  const menuLinks = document.querySelectorAll("ul li a");
+    const menuLinks = document.querySelectorAll("ul li a");
 
   menuLinks.forEach(link => {
     const linkPage = link.getAttribute("href");
