@@ -1,126 +1,108 @@
 /* ============================
-   Body & Global Styles
+   Base & Reset Styles
    ============================ */
+:root {
+    --primary-color: #4B5320;
+    --secondary-color: #556B2F;
+    --background-color: #B4BFA1;
+    --text-color: #333;
+    --white: #fff;
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease-in-out;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
+/* ============================
+   Layout Components
+   ============================ */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--white);
     padding: 1rem 0;
-    text-align: center;
+    box-shadow: var(--shadow);
 }
 
 section {
     margin: 2rem;
     padding: 1rem;
-    background: #556B2F;
+    background: var(--secondary-color);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
 }
 
 /* ============================
-   FAQ & Reasons
+   Animation Keyframes
    ============================ */
-.reasons, .faq-item {
-    margin-bottom: 1rem;
-}
-
-.reason, .faq-item {
-    background: #f9f9f9;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.faq-question {
-    cursor: pointer;
-    color: #0066cc;
-}
-
-.faq-answer {
-    display: none;
-    color: #555;
-    margin-top: 0.5rem;
-}
-
-/* ============================
-   Animations
-   ============================ */
-/* Zoom hover effect */
-@keyframes zoom {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1); }
-}
-
-.zoom-on-hover:hover {
-    animation: zoom 0.3s ease-in-out forwards;
-}
-
-/* Fade-in effect */
 @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
-}
-
-/* Generic fade */
-@keyframes fadeEffect {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-}
-
-.fade {
-    animation: fadeEffect 0.5s ease-in-out;
-}
-
-/* Float animation */
 @keyframes float {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
 
-.animate-float {
-    animation: float 3s ease-in-out infinite;
-}
-
-/* Bounce animation */
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
 }
 
-.animate-bounce {
-    animation: bounce 2s infinite;
-    animation-timing-function: ease-in-out;
-}
-
 /* ============================
-   Transitions & Hover
+   Animation Classes
    ============================ */
-.transition-all {
-    transition: all 0.3s ease-in-out;
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
 }
 
-.hover\:scale-105:hover {
-    transform: scale(1.05);
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite ease-in-out;
 }
 
 /* ============================
-   Slideshow
+   Interactive Elements
+   ============================ */
+.zoom-on-hover {
+    transition: var(--transition);
+}
+
+.zoom-on-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.form-input {
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.form-input:focus {
+    transform: translateY(-2px);
+    border-color: #3B82F6;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+}
+
+/* ============================
+   Slideshow Styles
    ============================ */
 .slideshow-container {
     padding: 1rem;
@@ -136,135 +118,8 @@ h2 {
 }
 
 /* ============================
-   Image Overlay
+   Privacy Page Styles
    ============================ */
-.image-overlay {
-    position: relative;
-}
-
-.image-overlay::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(rgba(75,83,32,0.3), rgba(75,83,32,0.6));
-    border-radius: 0.5rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.image-overlay:hover::after {
-    opacity: 1;
-}
-
-/* ============================
-   Responsive Styles
-   ============================ */
-@media (max-width: 768px) {
-
-    /* Date & weather alignment */
-    #datetime, #weather {
-        position: static;
-        text-align: center;
-        margin: 10px 0;
-    }
-
-    /* Slideshow image height */
-    .slide img {
-        min-height: 1200px;
-    }
-
-    /* Flex adjustments for student discount / responsive layout */
-    .md\:flex {
-        flex-direction: column !important;
-    }
-
-    .md\:w-1/2 {
-        width: 100% !important;
-    }
-
-    .md\:p-12 {
-        padding: 2rem !important;
-    }
-}
-
-/* ============================
-   Hover Effects
-   ============================ */
-
-.zoom-on-hover {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.zoom-on-hover:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-in;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ============================
-   Contact Styles
-   ============================ */
-
-
-.form-input {
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.form-input:focus {
-    transform: translateY(-2px);
-    border-color: #3B82F6;
-    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
-}
-
-.social-hover {
-    transition: all 0.3s ease;
-}
-
-.social-hover:hover {
-    transform: translateY(-5px);
-    filter: brightness(1.2);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-in {
-    animation: fadeIn 0.3s ease-out;
-}
-
-.form-input {
-    transition: all 0.3s ease;
-}
-
-.form-input:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-color: #3B82F6;
-}
-
-.social-link {
-    transition: transform 0.3s ease;
-}
-
-.social-link:hover {
-    transform: translateY(-5px);
-}
-
-/* ============================
-   Privacy Styles
-   ============================ */
-   /* Privacy Policy Page Specific Styles */
 .privacy-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -273,63 +128,53 @@ h2 {
 }
 
 .privacy-section {
-    background: white;
+    background: var(--white);
     border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
 }
 
 .privacy-section:hover {
     transform: translateY(-2px);
 }
 
-.privacy-heading {
-    color: #1a365d;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.privacy-list {
-    padding-left: 1.5rem;
-}
-
 .privacy-list li {
     margin-bottom: 0.5rem;
     position: relative;
+    padding-left: 1.5rem;
 }
 
 .privacy-list li::before {
     content: "•";
     color: #3B82F6;
-    font-weight: bold;
     position: absolute;
-    left: -1rem;
+    left: 0;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive Design */
+/* ============================
+   Media Queries
+   ============================ */
 @media (max-width: 768px) {
+    .slide img {
+        min-height: 300px;
+    }
+
+    .md\:flex {
+        flex-direction: column;
+    }
+
+    .md\:w-1/2 {
+        width: 100%;
+    }
+
     .privacy-container {
         padding: 1rem;
     }
-    
-    .privacy-heading {
-        font-size: 1.5rem;
-    }
 }
 
-/* Print Styles */
+/* ============================
+   Print Styles
+   ============================ */
 @media print {
     .privacy-container {
         max-width: 100%;
