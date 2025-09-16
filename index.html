@@ -304,23 +304,84 @@ function fetchWeather(lat, lon) {
     </div>
 </section>
 
-    <section id="faq">
-        <h2 class="text-3xl font-bold mb-8 text-white">Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h3 class="faq-question">What services do you offer?</h3>
-            <p class="faq-answer">We offer a wide range of services, including web development, IT solutions, and more.</p>
-        </div>
-        <div class="faq-item">
-            <h3 class="faq-question">How can I contact you?</h3>
-            <p class="faq-answer">You can contact us through our contact form, email, or phone number listed on the website.</p>
-        </div>
-        <div class="faq-item">
-            <h3 class="faq-question">Do you provide support after the project is completed?</h3>
-            <p class="faq-answer">Yes, we offer ongoing support to ensure your satisfaction with our services.</p>
-        </div>
-    </section>
-    
-    
+<section id="faq" class="py-16 bg-gradient-to-r from-[#556B2F] to-[#4B5320] text-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+
+    <div class="space-y-6">
+      <div class="faq-item border-b border-white/30 pb-4">
+        <button class="faq-question w-full text-left flex justify-between items-center text-lg font-semibold focus:outline-none">
+          What services do you offer?
+          <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <p class="faq-answer mt-2 text-white/90 hidden">
+          We offer a wide range of services, including web development, IT solutions, cybersecurity, cloud services, and more.
+        </p>
+      </div>
+
+      <div class="faq-item border-b border-white/30 pb-4">
+        <button class="faq-question w-full text-left flex justify-between items-center text-lg font-semibold focus:outline-none">
+          How can I contact you?
+          <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <p class="faq-answer mt-2 text-white/90 hidden">
+          You can contact us through our contact form, email, phone number, or social media channels listed on the website.
+        </p>
+      </div>
+
+      <div class="faq-item border-b border-white/30 pb-4">
+        <button class="faq-question w-full text-left flex justify-between items-center text-lg font-semibold focus:outline-none">
+          Do you provide support after the project is completed?
+          <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <p class="faq-answer mt-2 text-white/90 hidden">
+          Yes, we offer ongoing support and maintenance to ensure your systems continue to run smoothly.
+        </p>
+      </div>
+
+      <div class="faq-item border-b border-white/30 pb-4">
+        <button class="faq-question w-full text-left flex justify-between items-center text-lg font-semibold focus:outline-none">
+          What industries do you specialize in?
+          <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <p class="faq-answer mt-2 text-white/90 hidden">
+          We specialize in IT solutions for small businesses, education, healthcare, retail, and corporate clients.
+        </p>
+      </div>
+
+      <div class="faq-item border-b border-white/30 pb-4">
+        <button class="faq-question w-full text-left flex justify-between items-center text-lg font-semibold focus:outline-none">
+          How long does a typical project take?
+          <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <p class="faq-answer mt-2 text-white/90 hidden">
+          Project timelines vary depending on complexity, but we provide a detailed schedule during the consultation phase.
+        </p>
+      </div>
+
+      <div class="faq-item border-b border-white/30 pb-4">
+        <button class="faq-question w-full text-left flex justify-between items-center text-lg font-semibold focus:outline-none">
+          Do you offer custom IT solutions?
+          <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <p class="faq-answer mt-2 text-white/90 hidden">
+          Absolutely! We tailor solutions to meet your specific business needs and goals.
+        </p>
+      </div>
+
+      <div class="faq-item border-b border-white/30 pb-4">
+        <button class="faq-question w-full text-left flex justify-between items-center text-lg font-semibold focus:outline-none">
+          Are your services affordable for small businesses?
+          <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <p class="faq-answer mt-2 text-white/90 hidden">
+          Yes, we offer competitive pricing and scalable packages suitable for startups and small businesses.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
         <!-- Call to Action -->
         <section class="bg-[#4B5320] text-white text-center py-12">
             <!-- Navigation Links -->
@@ -399,6 +460,19 @@ function fetchWeather(lat, lon) {
     }
   });
 
+ // FAQ Accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const questionBtn = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    const icon = questionBtn.querySelector('i');
+
+    questionBtn.addEventListener('click', () => {
+      answer.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
+    });
+  });
 </script>
 
 </body>
