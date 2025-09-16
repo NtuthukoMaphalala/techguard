@@ -8,13 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-   
-  <!-- Google AdSense -->
-  <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5066023174174931"
-     crossorigin="anonymous">
-  </script-->
-
 </head>
+
 <body class="bg-[#B4BFA1] font-sans">
     <!-- Navigation Bar -->
     <header class="bg-[#4B5320] text-white shadow-md">
@@ -112,87 +107,8 @@
                 </svg>
             </a>
         </div>
-
-        <!-- TechGuard Sidebar Ad. -->
-        <div class="ad-container my-8">
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-5066023174174931"
-               data-ad-slot="9073636041"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-          <script>
-               (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-        </div>
     </div>
 </section>
-
-<script>
-const API_KEY = '07bf5d50456b5181632845cd6b13ad91';
-
-// Format time: dd - mmm - yyyy hh:mm:ss
-function formatTime(date) {
-    const dd = String(date.getDate()).padStart(2, '0');
-    const mmm = date.toLocaleString('en-us', { month: 'short' });
-    const yyyy = date.getFullYear();
-    const hh = String(date.getHours()).padStart(2, '0');
-    const min = String(date.getMinutes()).padStart(2, '0');
-    const sec = String(date.getSeconds()).padStart(2, '0');
-    return `${dd} - ${mmm} - ${yyyy} ${hh}:${min}:${sec}`;
-}
-
-// Update time every second
-function updateTime() {
-    const now = new Date();
-    document.getElementById('current-time').textContent = formatTime(now);
-}
-setInterval(updateTime, 1000);
-updateTime();
-
-// Fetch weather from OpenWeatherMap
-function fetchWeather(lat, lon) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`)
-        .then(res => res.json())
-        .then(data => {
-            const weatherDiv = document.getElementById('weather');
-            const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-            weatherDiv.innerHTML = `
-                <img src="${iconUrl}" alt="${data.weather[0].description}" class="w-10 h-10">
-                <span>${data.name}: ${data.weather[0].main}</span>
-            `;
-        })
-        .catch(err => console.error(err));
-}
-
-// Get user location
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(pos => {
-        fetchWeather(pos.coords.latitude, pos.coords.longitude);
-    }, err => {
-        console.error('Location access denied:', err);
-        document.getElementById('weather').textContent = 'Weather unavailable';
-    });
-} else {
-    document.getElementById('weather').textContent = 'Geolocation not supported';
-}
-
-function fetchWeather(lat, lon) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`)
-        .then(res => res.json())
-        .then(data => {
-            const weatherDiv = document.getElementById('weather');
-            const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-            const temp = Math.round(data.main.temp); // temperature in °C
-            weatherDiv.innerHTML = `
-                <img src="${iconUrl}" alt="${data.weather[0].description}" class="w-10 h-10">
-                <span>${data.name}: ${data.weather[0].main}, ${temp}°C</span>
-            `;
-        })
-        .catch(err => console.error(err));
-}
-
-</script>
 
 <section class="py-16 bg-gradient-to-r from-blue-500 to-blue-600">
     <div class="container mx-auto px-4">
@@ -236,20 +152,7 @@ function fetchWeather(lat, lon) {
             </div>
         </div>
     </div>
-</section>
-
-<!-- AdSense Ad Unit -->
-<div class="ad-container my-8">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-5066023174174931"
-       data-ad-slot="5904547223"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>    
+</section>   
 
 <!-- stats-->
 <section class="bg-white py-16">
@@ -395,7 +298,7 @@ function fetchWeather(lat, lon) {
                             <i class="fab fa-whatsapp text-2xl"></i>
                             <span class="text-sm">Connect on WhatsApp</span>
                         </a>
-                        <a href="https://facebook.com/techguard_it_solutions" target="_blank" title="Facebook"
+                        <a href="https://facebook.com/ntuthukomaphalalamsuthu" target="_blank" title="Facebook"
                         class="flex items-center space-x-2 hover:scale-110 transition">
                             <i class="fab fa-facebook-f text-2xl"></i>
                             <span class="text-sm">Follow on Facebook</span>
@@ -433,47 +336,97 @@ function fetchWeather(lat, lon) {
 </footer>
 
 <script>
-  // Dynamic Footer Year
-  const startYear = 2023;
-  const currentYear = new Date().getFullYear();
-  const footerText = document.getElementById("footer-text");
+const API_KEY = '07bf5d50456b5181632845cd6b13ad91';
 
-  footerText.innerHTML = `&copy; ${startYear} - ${currentYear} TechGuard IT Solutions. All Rights Reserved.`;
+// ------------------ Time ------------------
+function formatTime(date) {
+    const dd = String(date.getDate()).padStart(2, '0');
+    const mmm = date.toLocaleString('en-us', { month: 'short' });
+    const yyyy = date.getFullYear();
+    const hh = String(date.getHours()).padStart(2, '0');
+    const min = String(date.getMinutes()).padStart(2, '0');
+    const sec = String(date.getSeconds()).padStart(2, '0');
+    return `${dd} - ${mmm} - ${yyyy} ${hh}:${min}:${sec}`;
+}
 
-        const toggleButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+function updateTime() {
+    document.getElementById('current-time').textContent = formatTime(new Date());
+}
 
-        toggleButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menu.classList.toggle('hidden');
-    });
+setInterval(updateTime, 1000);
+updateTime();
 
+// ------------------ Weather ------------------
+function fetchWeather(lat, lon) {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`)
+        .then(res => res.json())
+        .then(data => {
+            const weatherDiv = document.getElementById('weather');
+            const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+            const temp = Math.round(data.main.temp);
+            weatherDiv.innerHTML = `
+                <img src="${iconUrl}" alt="${data.weather[0].description}" class="w-10 h-10">
+                <span>${data.name}: ${data.weather[0].main}, ${temp}°C</span>
+            `;
+        })
+        .catch(err => {
+            console.error(err);
+            document.getElementById('weather').textContent = 'Weather unavailable';
+        });
+}
 
-    const currentPage = location.pathname.split("/").pop(); // Get current page like 'index.html'
-    const menuLinks = document.querySelectorAll("ul li a");
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+        pos => fetchWeather(pos.coords.latitude, pos.coords.longitude),
+        err => {
+            console.error('Location access denied:', err);
+            document.getElementById('weather').textContent = 'Weather unavailable';
+        }
+    );
+} else {
+    document.getElementById('weather').textContent = 'Geolocation not supported';
+}
 
-  menuLinks.forEach(link => {
-    const linkPage = link.getAttribute("href");
-    if (linkPage === currentPage) {
-      link.classList.remove("bg-blue-700", "text-white");
-      link.classList.add("bg-white", "text-blue-700", "border", "border-blue-700");
+// ------------------ Mobile Menu Toggle ------------------
+const toggleButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+toggleButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
+
+// ------------------ Highlight Current Page ------------------
+const currentPage = location.pathname.split("/").pop(); 
+const menuLinks = document.querySelectorAll("ul li a, #mobile-menu .mobile-link");
+
+menuLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+        link.classList.remove("bg-blue-700", "text-white", "text-blue-700");
+        link.classList.add("bg-white", "text-blue-700", "border", "border-blue-700");
     }
-  });
+});
 
- // FAQ Accordion
-  const faqItems = document.querySelectorAll('.faq-item');
+// ------------------ FAQ Accordion ------------------
+const faqItems = document.querySelectorAll('.faq-item');
 
-  faqItems.forEach(item => {
+faqItems.forEach(item => {
     const questionBtn = item.querySelector('.faq-question');
     const answer = item.querySelector('.faq-answer');
     const icon = questionBtn.querySelector('i');
 
     questionBtn.addEventListener('click', () => {
-      answer.classList.toggle('hidden');
-      icon.classList.toggle('rotate-180');
+        answer.classList.toggle('hidden');
+        icon.classList.toggle('rotate-180');
     });
-  });
+});
+
+// ------------------ Footer Year ------------------
+const startYear = 2023;
+const currentYear = new Date().getFullYear();
+document.getElementById("footer-text").innerHTML = 
+    `&copy; ${startYear} - ${currentYear} TechGuard IT Solutions. All Rights Reserved.`;
 </script>
+
 
 </body>
 </html>
